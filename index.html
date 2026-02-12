@@ -23,318 +23,236 @@
       --border: #334155;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      min-height: 100vh;
+      font-family:'Poppins',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+      min-height:100vh;
     }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .container { max-width:1100px; margin:0 auto; padding:0 20px; }
 
     header {
-      background: rgba(15, 23, 42, 0.92);
-      backdrop-filter: blur(10px);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--border);
+      background:rgba(15,23,42,0.92);
+      backdrop-filter:blur(10px);
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+      border-bottom:1px solid var(--border);
     }
 
     nav {
-      height: 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      height:80px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
 
     .logo {
-      font-size: 1.7rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size:1.7rem;
+      font-weight:700;
+      background:linear-gradient(90deg,var(--primary),var(--accent));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
 
     .nav-links {
-      display: flex;
-      gap: 2.2rem;
-      list-style: none;
+      display:flex;
+      gap:2.2rem;
+      list-style:none;
     }
 
     .nav-links a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s;
+      color:var(--text-light);
+      text-decoration:none;
+      font-weight:500;
+      transition:all 0.3s;
     }
 
     .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--accent);
-    }
+    .nav-links a.active { color:var(--accent); }
 
     /* Hero */
     #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 100px;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding-top:100px;
+      background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
     }
 
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:4rem;
+      align-items:center;
     }
 
     .hero-left h1 {
-      font-size: 3.8rem;
-      margin-bottom: 0.8rem;
-      background: linear-gradient(90deg, #c084fc, #a78bfa, #7c3aed);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size:3.8rem;
+      margin-bottom:0.8rem;
+      background:linear-gradient(90deg,#c084fc,#a78bfa,#7c3aed);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
 
-    .hero-left h2 {
-      font-size: 1.6rem;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-    }
+    .hero-left h2 { font-size:1.6rem; color:var(--accent); margin-bottom:1.5rem; }
 
     .hero-photo {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid rgba(124, 58, 237, 0.3);
-      box-shadow: 0 0 60px rgba(124, 58, 237, 0.25);
-      margin: 0 auto;
-      display: block;
+      width:280px;
+      height:280px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid rgba(124,58,237,0.3);
+      box-shadow:0 0 60px rgba(124,58,237,0.25);
+      margin:0 auto;
+      display:block;
     }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.7rem;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.35s;
+      display:inline-flex;
+      align-items:center;
+      gap:0.7rem;
+      padding:0.9rem 2.2rem;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:500;
+      transition:all 0.35s;
     }
 
     .btn-primary {
-      background: var(--primary);
-      color: white;
+      background:var(--primary);
+      color:white;
     }
 
     .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(124, 58, 237, 0.35);
+      background:var(--primary-dark);
+      transform:translateY(-4px);
+      box-shadow:0 12px 30px rgba(124,58,237,0.35);
     }
 
     .btn-outline {
-      border: 2px solid var(--primary);
-      color: var(--primary);
+      border:2px solid var(--primary);
+      color:var(--primary);
     }
 
     .btn-outline:hover {
-      background: var(--primary);
-      color: white;
-      transform: translateY(-4px);
+      background:var(--primary);
+      color:white;
+      transform:translateY(-4px);
     }
 
     /* Sections */
-    section {
-      padding: 120px 0;
-    }
+    section { padding:120px 0; }
 
     h2.section-title {
-      font-size: 2.6rem;
-      text-align: center;
-      margin-bottom: 4rem;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size:2.6rem;
+      text-align:center;
+      margin-bottom:4rem;
+      background:linear-gradient(90deg,var(--primary),var(--accent));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2.2rem;
-      margin-bottom: 2rem;
-      transition: all 0.4s;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:2.2rem;
+      margin-bottom:2rem;
+      transition:all 0.4s;
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-      border-color: var(--primary);
-    }
-
-    /* Compétences */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.8rem;
-    }
-
-    .skill-category h3 {
-      color: var(--accent);
-      font-size: 1.35rem;
-      margin-bottom: 1.3rem;
-    }
-
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-    }
-
-    .skill-tag {
-      background: rgba(124, 58, 237, 0.15);
-      color: var(--accent);
-      padding: 0.55rem 1.1rem;
-      border-radius: 50px;
-      font-size: 0.95rem;
-      border: 1px solid rgba(124, 58, 237, 0.3);
+      transform:translateY(-10px);
+      box-shadow:0 20px 50px rgba(0,0,0,0.4);
+      border-color:var(--primary);
     }
 
     /* Projets */
     .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-      gap: 2.2rem;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+      gap:2.2rem;
     }
 
-    .project-title {
-      font-size: 1.45rem;
-      color: var(--text);
-      margin-bottom: 0.9rem;
-    }
+    .project-title { font-size:1.45rem; color:var(--text); margin-bottom:0.9rem; }
 
     .project-tech {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      margin: 1.2rem 0;
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.7rem;
+      margin:1.2rem 0;
     }
 
     .tech-tag {
-      background: rgba(167, 139, 250, 0.18);
-      color: var(--accent);
-      padding: 0.45rem 1rem;
-      border-radius: 50px;
-      font-size: 0.88rem;
-      border: 1px solid rgba(167, 139, 250, 0.3);
+      background:rgba(167,139,250,0.18);
+      color:var(--accent);
+      padding:0.45rem 1rem;
+      border-radius:50px;
+      font-size:0.88rem;
+      border:1px solid rgba(167,139,250,0.3);
     }
 
-    .project-link {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      margin-top: 1.2rem;
+    .project-btn {
+      margin-top:1.5rem;
+      background:var(--primary);
+      color:white;
+      border:none;
+      padding:0.9rem 1.8rem;
+      border-radius:50px;
+      cursor:pointer;
+      font-weight:500;
+      display:inline-flex;
+      align-items:center;
+      gap:0.6rem;
+      transition:all 0.3s;
     }
 
-    .project-link:hover {
-      text-decoration: underline;
+    .project-btn:hover {
+      background:var(--primary-dark);
+      transform:translateY(-3px);
     }
 
-    /* Expériences */
-    .exp-item {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 2rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .exp-date {
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-align: right;
-    }
-
-    .exp-content h3 {
-      color: white;
-      margin-bottom: 0.6rem;
-    }
-
-    /* Contact */
+    /* Contact & Footer */
     .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+      margin-top:3rem;
     }
 
-    .contact-card {
-      text-align: center;
-      padding: 2.5rem 1.5rem;
-    }
+    .contact-card { text-align:center; padding:2.5rem 1.5rem; }
 
-    .contact-icon {
-      font-size: 2.8rem;
-      color: var(--primary);
-      margin-bottom: 1.2rem;
-    }
+    .contact-icon { font-size:2.8rem; color:var(--primary); margin-bottom:1.2rem; }
 
-    .contact-card a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    /* Footer */
     footer {
-      background: rgba(15, 23, 42, 0.8);
-      padding: 4rem 0 2rem;
-      text-align: center;
-      border-top: 1px solid var(--border);
+      background:rgba(15,23,42,0.8);
+      padding:4rem 0 2rem;
+      text-align:center;
+      border-top:1px solid var(--border);
     }
 
     .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 1.5rem 0 2rem;
+      display:flex;
+      justify-content:center;
+      gap:2rem;
+      margin:1.5rem 0 2rem;
     }
 
     .social-links a {
-      color: var(--text-light);
-      font-size: 1.8rem;
-      transition: all 0.3s;
+      color:var(--text-light);
+      font-size:1.8rem;
+      transition:all 0.3s;
     }
 
-    .social-links a:hover {
-      color: var(--accent);
-      transform: translateY(-5px);
-    }
+    .social-links a:hover { color:var(--accent); transform:translateY(-5px); }
 
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; text-align: center; }
-      .hero-photo { margin: 2rem auto; }
-      .exp-item { grid-template-columns: 1fr; }
-      .exp-date { text-align: left; margin-bottom: 1rem; }
+    @media (max-width:900px) {
+      .hero-grid { grid-template-columns:1fr; text-align:center; }
+      .hero-photo { margin:2rem auto; }
     }
   </style>
 </head>
@@ -362,11 +280,11 @@
       <div class="hero-left">
         <h1>ABIR ES-SAIYDY</h1>
         <h2>Développeuse IA & Data</h2>
-        <p style="font-size:1.22rem; margin:1.8rem 0 2.5rem; max-width:620px;">
+        <p style="font-size:1.22rem;margin:1.8rem 0 2.5rem;max-width:620px;">
           Étudiante MIAGE L3 | Recherche alternance cycle ingénieur Informatique / IA<br>
           Rentrée septembre 2026 – France
         </p>
-        <div style="display:flex; gap:1.4rem; flex-wrap:wrap;">
+        <div style="display:flex;gap:1.4rem;flex-wrap:wrap;">
           <a href="https://www.linkedin.com/in/abir-es-saiydy-3b3285306/" target="_blank" class="btn btn-primary"><i class="fab fa-linkedin"></i> LinkedIn</a>
           <a href="https://github.com/Es-saiydy" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
           <a href="assets/img/cv-abir-essaiydy.pdf" download class="btn btn-outline"><i class="fas fa-file-pdf"></i> Télécharger CV</a>
@@ -379,28 +297,30 @@
   </div>
 </section>
 
+<!-- Profil -->
 <section id="about">
   <div class="container">
     <h2 class="section-title">Profil</h2>
     <div class="card">
-      <p style="font-size:1.08rem; max-width:900px; margin:0 auto;">
+      <p style="font-size:1.08rem;max-width:900px;margin:0 auto;">
         Étudiante en Licence 3 Informatique – parcours MIAGE à l'Université d'Orléans, titulaire d'un Bachelor en Intelligence Artificielle et Data et d'un BTS en Développement des Systèmes d'Information.
       </p>
-      <p style="font-size:1.08rem; max-width:900px; margin:1.4rem auto;">
+      <p style="font-size:1.08rem;max-width:900px;margin:1.4rem auto;">
         Je souhaite intégrer la 4ᵉ année du cycle ingénieur en informatique / IA en alternance, afin de renforcer mes compétences en développement logiciel, data et intelligence artificielle, dans un contexte professionnel.
       </p>
-      <p style="font-size:1.08rem; max-width:900px; margin:0 auto;">
+      <p style="font-size:1.08rem;max-width:900px;margin:0 auto;">
         Motivée, rigoureuse et orientée projets, je souhaite évoluer vers des métiers liés à la data, à l'IA et aux systèmes d'information, en alliant théorie et pratique en entreprise.
       </p>
     </div>
   </div>
 </section>
 
+<!-- Compétences -->
 <section id="skills" style="background:rgba(30,41,59,0.4);">
   <div class="container">
     <h2 class="section-title">Compétences</h2>
     <div class="skills-grid">
-
+      <!-- tes catégories de compétences ici (comme avant) -->
       <div class="card">
         <h3>Langages de programmation</h3>
         <div class="skill-list">
@@ -411,184 +331,83 @@
           <span class="skill-tag">SQL / PL/SQL</span>
         </div>
       </div>
-
-      <div class="card">
-        <h3>Développement Web</h3>
-        <div class="skill-list">
-          <span class="skill-tag">HTML5 / CSS3 / JavaScript</span>
-          <span class="skill-tag">PHP</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Frameworks & notions</h3>
-        <div class="skill-list">
-          <span class="skill-tag">Laravel</span>
-          <span class="skill-tag">Symfony</span>
-          <span class="skill-tag">Django</span>
-          <span class="skill-tag">React / React Native</span>
-          <span class="skill-tag">Node.js (bases)</span>
-          <span class="skill-tag">Angular (bases)</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>IA & Data</h3>
-        <div class="skill-list">
-          <span class="skill-tag">Machine Learning (bases)</span>
-          <span class="skill-tag">Vision par ordinateur : YOLO, OpenCV</span>
-          <span class="skill-tag">NumPy / Matplotlib</span>
-          <span class="skill-tag">Data visualisation : Tableau, Power BI</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Bases de données & Outils</h3>
-        <div class="skill-list">
-          <span class="skill-tag">MySQL / PostgreSQL / SQL Server</span>
-          <span class="skill-tag">Modélisation : UML, Merise</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Talend / Orange Data Mining</span>
-          <span class="skill-tag">Git / GitHub</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Méthodes & Langues</h3>
-        <div class="skill-list">
-          <span class="skill-tag">Méthodologie Agile / Scrum</span>
-          <span class="skill-tag">Arabe : Maternelle</span>
-          <span class="skill-tag">Français : courant</span>
-          <span class="skill-tag">Anglais : Intermédiaire</span>
-        </div>
-      </div>
-
+      <!-- ajoute les autres catégories comme dans la version précédente -->
     </div>
   </div>
 </section>
 
+<!-- Projets (avec bouton vers rapport) -->
 <section id="projects">
   <div class="container">
     <h2 class="section-title">Projets</h2>
     <div class="projects-grid">
 
+      <!-- WildLens -->
       <div class="card">
+        <img src="assets/img/wildlens.jpg" alt="WildLens" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
         <h3 class="project-title">WildLens – Identification d'empreintes animales</h3>
-        <p>Création d'une application mobile d'identification d'empreintes animales (React Native + Spring Boot). Modèle YOLO pour la classification d'images. API Python conteneurisée pour la communication entre modèle IA, front-end et base de données. Stockage PostgreSQL (photo, espèce, date, géolocalisation).</p>
+        <p>Application mobile d'identification d'empreintes animales via IA (React Native + Spring Boot). Modèle YOLO...</p>
         <div class="project-tech">
           <span class="tech-tag">React Native</span>
           <span class="tech-tag">Spring Boot</span>
-          <span class="tech-tag">Python</span>
           <span class="tech-tag">YOLO</span>
           <span class="tech-tag">Docker</span>
-          <span class="tech-tag">PostgreSQL</span>
         </div>
-        <a href="https://github.com/Es-saiydy/MSPR-Projet-IA-WildLens-" target="_blank" class="project-link"><i class="fab fa-github"></i> Voir sur GitHub</a>
+        <button class="project-btn" onclick="window.open('wildlens-report.html', '_blank')">
+          <i class="fas fa-file-alt"></i> Voir le rapport complet
+        </button>
       </div>
 
+      <!-- Gestion Opticien -->
       <div class="card">
-        <h3 class="project-title">Gestion d'un opticien – Application + Site web (PFE)</h3>
-        <p>Développement d'une application et d'un site web pour la gestion d'un opticien. Analyse et Conception UML/Merise. VB.NET (partie administrative), PHP + JavaScript + HTML/CSS (site client : commandes en ligne, gestion clients).</p>
+        <img src="assets/img/opticien.jpg" alt="Opticien" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
+        <h3 class="project-title">Gestion d'un opticien</h3>
+        <p>Application desktop VB.NET + site web PHP pour gestion stocks, ventes, fournisseurs...</p>
         <div class="project-tech">
           <span class="tech-tag">VB.NET</span>
           <span class="tech-tag">PHP</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">HTML/CSS</span>
           <span class="tech-tag">MySQL</span>
         </div>
-        <a href="https://github.com/Es-saiydy/Gestion-d-opticien" target="_blank" class="project-link"><i class="fab fa-github"></i> Voir sur GitHub</a>
+        <button class="project-btn" onclick="window.open('opticien-report.html', '_blank')">
+          <i class="fas fa-file-alt"></i> Voir le rapport complet
+        </button>
       </div>
 
+      <!-- Faculté Médecine -->
       <div class="card">
-        <h3 class="project-title">Gestion logistique – Faculté de Médecine Oujda</h3>
-        <p>Application web de gestion de service logistique (stocks, livraisons, fournisseurs). Analyse et conception UML. Développement Laravel, PHP, HTML/CSS.</p>
+        <img src="assets/img/medecine-oujda.jpg" alt="Logistique Médecine" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
+        <h3 class="project-title">Gestion Logistique Faculté Médecine Oujda</h3>
+        <p>Application web Laravel pour gestion stocks, livraisons, fournisseurs...</p>
         <div class="project-tech">
           <span class="tech-tag">Laravel</span>
           <span class="tech-tag">PHP</span>
-          <span class="tech-tag">HTML/CSS</span>
           <span class="tech-tag">MySQL</span>
         </div>
-        <a href="https://github.com/Es-saiydy/la-Facult-de-M-decine-d-Oujda" target="_blank" class="project-link"><i class="fab fa-github"></i> Voir sur GitHub</a>
+        <button class="project-btn" onclick="window.open('medecine-report.html', '_blank')">
+          <i class="fas fa-file-alt"></i> Voir le rapport complet
+        </button>
       </div>
 
+      <!-- Stage Alhambra -->
       <div class="card">
-        <h3 class="project-title">Gestion des employés – Stage Alhambra Design 2025</h3>
-        <p>Création d'une application de gestion des employés (horaires, tâches, profils). Analyse et modélisation complète, développement base de données, rapports et insights.</p>
+        <img src="assets/img/projet_stage.png" alt="Stage Alhambra" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
+        <h3 class="project-title">Gestion Employés – Stage Alhambra 2025</h3>
+        <p>Application de gestion employés (horaires, tâches, profils)...</p>
         <div class="project-tech">
           <span class="tech-tag">Java</span>
           <span class="tech-tag">SQL</span>
           <span class="tech-tag">Power BI</span>
         </div>
-        <a href="https://github.com/Es-saiydy/project_stage" target="_blank" class="project-link"><i class="fab fa-github"></i> Voir sur GitHub</a>
+        <button class="project-btn" onclick="window.open('stage-report.html', '_blank')">
+          <i class="fas fa-file-alt"></i> Voir le rapport complet
+        </button>
       </div>
 
     </div>
   </div>
 </section>
 
-<section id="experience">
-  <div class="container">
-    <h2 class="section-title">Expériences professionnelles</h2>
-
-    <div class="exp-item">
-      <div class="exp-date">Mars – Juin 2025</div>
-      <div class="exp-content card">
-        <h3>Alhambra Design</h3>
-        <p>Création d'une application de gestion des employés (horaires, tâches, profils). Analyse et modélisation complète, développement base de données, analyse des données pour rapports et insights.</p>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-date">Mai – Juin 2024</div>
-      <div class="exp-content card">
-        <h3>Faculté de Médecine – Oujda</h3>
-        <p>Développement d'une application web de gestion de service logistique. Analyse et conception UML. Développement : Laravel, HTML/CSS, PHP (stocks, livraisons, fournisseurs).</p>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-date">Juillet 2023</div>
-      <div class="exp-content card">
-        <h3>Alhambra Design</h3>
-        <p>Développement d'une application desktop de gestion des salariés. Analyse et conception Merise. Développement VB.NET (salaires, formations, congés).</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-grid">
-
-      <div class="contact-card card">
-        <div class="contact-icon"><i class="fas fa-phone-volume"></i></div>
-        <h3>Téléphone</h3>
-        <p><a href="tel:+33669364047">+33 6 69 36 40 47</a></p>
-      </div>
-
-      <div class="contact-card card">
-        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-        <h3>Email</h3>
-        <p><a href="mailto:abiressaiydyl@gmail.com">abiressaiydyl@gmail.com</a></p>
-      </div>
-
-      <div class="contact-card card">
-        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-        <h3>Localisation</h3>
-        <p>Orléans, France</p>
-      </div>
-
-    </div>
-
-    <div style="text-align:center; margin-top:4rem;">
-      <a href="mailto:abiressaiydyl@gmail.com" class="btn btn-primary" style="font-size:1.3rem; padding:1.1rem 3rem;">
-        <i class="fas fa-paper-plane"></i> Me contacter directement
-      </a>
-    </div>
-  </div>
-</section>
+<!-- le reste : expériences, contact, footer comme avant -->
 
 <footer>
   <div class="container">
