@@ -1,323 +1,604 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abir Es-Saiydy - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <style>
-        body { transition: background-color 0.3s, color 0.3s; }
-        .dark { background-color: #1f2937; color: #f3f4f6; }
-        .dark .bg-white { background-color: #374151; }
-        .dark .text-gray-800 { color: #d1d5db; }
-        .dark .bg-gray-100 { background-color: #4b5563; }
-        .project-card { transition: transform 0.3s ease; }
-        .project-card:hover { transform: translateY(-5px); }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abir Es-Saiydy – Développeuse IA & Data</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --text: #e2e8f0;
+      --text-light: #94a3b8;
+      --primary: #7c3aed;
+      --primary-dark: #6d28d9;
+      --accent: #a78bfa;
+      --card: #1e293b;
+      --border: #334155;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+    }
+
+    /* Hero */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-left h1 {
+      font-size: 3.8rem;
+      margin-bottom: 0.8rem;
+      background: linear-gradient(90deg, #c084fc, #a78bfa, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-left h2 {
+      font-size: 1.6rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-photo {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid rgba(124, 58, 237, 0.3);
+      box-shadow: 0 0 60px rgba(124, 58, 237, 0.25);
+      margin: 0 auto;
+      display: block;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.35s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(124, 58, 237, 0.35);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-4px);
+    }
+
+    /* Sections */
+    section {
+      padding: 120px 0;
+    }
+
+    h2.section-title {
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 4rem;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.2rem;
+      margin-bottom: 2rem;
+      transition: all 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      border-color: var(--primary);
+    }
+
+    /* Compétences */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .skill-category h3 {
+      color: var(--accent);
+      font-size: 1.35rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .skill-tag {
+      background: rgba(124, 58, 237, 0.15);
+      color: var(--accent);
+      padding: 0.55rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      border: 1px solid rgba(124, 58, 237, 0.3);
+    }
+
+    /* Projets */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2.2rem;
+    }
+
+    .project-title {
+      font-size: 1.45rem;
+      color: var(--text);
+      margin-bottom: 0.9rem;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin: 1.2rem 0;
+    }
+
+    .tech-tag {
+      background: rgba(167, 139, 250, 0.18);
+      color: var(--accent);
+      padding: 0.45rem 1rem;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      border: 1px solid rgba(167, 139, 250, 0.3);
+    }
+
+    .project-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Expériences */
+    .exp-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .exp-date {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: right;
+    }
+
+    .exp-content h3 {
+      color: white;
+      margin-bottom: 0.6rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .contact-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .contact-icon {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-card a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(15, 23, 42, 0.8);
+      padding: 4rem 0 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .social-links a {
+      color: var(--text-light);
+      font-size: 1.8rem;
+      transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+      transform: translateY(-5px);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-photo { margin: 2rem auto; }
+      .exp-item { grid-template-columns: 1fr; }
+      .exp-date { text-align: left; margin-bottom: 1rem; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <!-- Navbar -->
-    <nav class="bg-blue-900 text-white p-4 sticky top-0 z-50 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold">Abir Es-Saiydy</a>
-            <div class="space-x-6 hidden md:flex">
-                <a href="#about" class="hover:text-blue-300">À propos</a>
-                <a href="#skills" class="hover:text-blue-300">Compétences</a>
-                <a href="#projects" class="hover:text-blue-300">Projets</a>
-                <a href="#experience" class="hover:text-blue-300">Expériences</a>
-                <a href="#contact" class="hover:text-blue-300">Contact</a>
-            </div>
-            <button id="darkModeToggle" class="text-xl"><i class="fas fa-moon"></i></button>
-        </div>
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">Abir Es-Saiydy</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Accueil</a></li>
+        <li><a href="#about">Profil</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#experience">Expériences</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+  </div>
+</header>
 
-    <!-- Hero -->
-    <section class="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-20 text-center">
-        <div class="container mx-auto">
-            <img src="img/photo.jpg" alt="Abir Es-Saiydy" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover shadow-lg">
-            <h1 class="text-4xl font-bold mb-2">Abir Es-Saiydy</h1>
-            <p class="text-xl mb-4">Étudiante MIAGE L3 | Développement Full Stack & Intelligence Artificielle</p>
-            <p class="text-lg mb-6">Recherche alternance Cycle Ingénieur Informatique / IA – Rentrée 2026</p>
-            <div class="space-x-4">
-                <a href="https://www.linkedin.com/in/abir-es-saiydy-3b3285306/" target="_blank" class="bg-white text-blue-900 px-4 py-2 rounded hover:bg-gray-200"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
-                <a href="https://github.com/Es-saiydy" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700"><i class="fab fa-github mr-2"></i>GitHub</a>
-                <a href="img/cv-abir-essaiydy.pdf" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500"><i class="fas fa-file-pdf mr-2"></i>CV</a>
-            </div>
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <h1>ABIR ES-SAIYDY</h1>
+        <h2>Développeuse IA & Data</h2>
+        <p style="font-size:1.22rem; margin:1.8rem 0 2.5rem; max-width:620px;">
+          Étudiante MIAGE L3 | Recherche alternance cycle ingénieur Informatique / IA<br>
+          Rentrée septembre 2026 – France
+        </p>
+        <div style="display:flex; gap:1.4rem; flex-wrap:wrap;">
+          <a href="https://www.linkedin.com/in/abir-es-saiydy-3b3285306/" target="_blank" class="btn btn-primary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/Es-saiydy" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
+          <a href="assets/img/cv-abir-essaiydy.pdf" download class="btn btn-outline"><i class="fas fa-file-pdf"></i> Télécharger CV</a>
         </div>
-    </section>
+      </div>
+      <div>
+        <img src="assets/img/photo.jpg" alt="Abir Es-Saiydy" class="hero-photo">
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- À propos -->
-    <section id="about" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">À propos</h2>
-            <p class="text-lg text-center max-w-3xl mx-auto">Étudiante en Licence 3 Informatique – parcours MIAGE à l'Université d'Orléans. Titulaire d'un Bachelor Intelligence Artificielle et Data et d'un BTS Développement. Passionnée par l'IA, le développement full stack et la data, je cherche une alternance en cycle ingénieur pour allier théorie et pratique en entreprise. Projet phare : WildLens – application IA pour identifier les empreintes animales.</p>
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">Profil</h2>
+    <div class="card">
+      <p style="font-size:1.08rem; max-width:900px; margin:0 auto;">
+        Étudiante en Licence 3 Informatique – parcours MIAGE à l'Université d'Orléans, titulaire d'un Bachelor en Intelligence Artificielle et Data et d'un BTS en Développement des Systèmes d'Information.
+      </p>
+      <p style="font-size:1.08rem; max-width:900px; margin:1.4rem auto;">
+        Je souhaite intégrer la 4ᵉ année du cycle ingénieur en informatique / IA en alternance, afin de renforcer mes compétences en développement logiciel, data et intelligence artificielle, dans un contexte professionnel.
+      </p>
+      <p style="font-size:1.08rem; max-width:900px; margin:0 auto;">
+        Motivée, rigoureuse et orientée projets, je souhaite évoluer vers des métiers liés à la data, à l'IA et aux systèmes d'information, en alliant théorie et pratique en entreprise.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="background:rgba(30,41,59,0.4);">
+  <div class="container">
+    <h2 class="section-title">Compétences</h2>
+    <div class="skills-grid">
+
+      <div class="card">
+        <h3>Langages de programmation</h3>
+        <div class="skill-list">
+          <span class="skill-tag">Java (POO, MVC, Java SE)</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">C</span>
+          <span class="skill-tag">VB.NET</span>
+          <span class="skill-tag">SQL / PL/SQL</span>
         </div>
-    </section>
+      </div>
 
-    <!-- Compétences -->
-    <section id="skills" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">Compétences</h2>
-            <div class="flex flex-wrap justify-center gap-2">
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full">Java (POO, MVC)</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full">Python</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full">React / React Native</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full">Spring Boot</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full">Laravel</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full">Symfony</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full">Django</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full">YOLO / OpenCV</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full">Docker</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full">SQL / PostgreSQL</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full">Git / GitHub</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full">Tableau / Power BI</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full">Agile / Scrum</span>
-            </div>
+      <div class="card">
+        <h3>Développement Web</h3>
+        <div class="skill-list">
+          <span class="skill-tag">HTML5 / CSS3 / JavaScript</span>
+          <span class="skill-tag">PHP</span>
         </div>
-    </section>
+      </div>
 
-    <!-- Projets -->
-    <section id="projects" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">Projets</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- WildLens -->
-                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-lg">
-                    <img src="img/wildlens.jpg" alt="WildLens" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-xl font-bold mb-2">WildLens - Identification d'empreintes animales</h3>
-                    <p class="mb-4">Application mobile React Native + Spring Boot avec modèle YOLO pour détecter les espèces via photo. API Python dockérisée, stockage PostgreSQL avec géolocalisation.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 px-2 py-1 rounded">React Native</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">Spring Boot</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">Python</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">YOLO</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">Docker</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">PostgreSQL</span>
-                    </div>
-                    <a href="https://github.com/Es-saiydy/MSPR-Projet-IA-WildLens-" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">GitHub</a>
-                </div>
-
-                <!-- Gestion Opticien -->
-                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-lg">
-                    <img src="img/opticien.jpg" alt="Gestion Opticien" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-xl font-bold mb-2">Gestion d'Opticien</h3>
-                    <p class="mb-4">Application desktop VB.NET + site web PHP pour gestion stocks, ventes, fournisseurs, commandes en ligne. Conception UML/Merise.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 px-2 py-1 rounded">VB.NET</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">PHP</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">JavaScript</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">MySQL</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">HTML/CSS</span>
-                    </div>
-                    <a href="https://github.com/Es-saiydy/Gestion-d-opticien" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">GitHub</a>
-                </div>
-
-                <!-- Faculté Médecine -->
-                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-lg">
-                    <img src="img/medecine-oujda.jpg" alt="Gestion Logistique Médecine" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-xl font-bold mb-2">Gestion Logistique Faculté de Médecine Oujda</h3>
-                    <p class="mb-4">Application web pour stocks, livraisons, fournisseurs. Développée avec Laravel, PHP, HTML/CSS. Conception UML.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 px-2 py-1 rounded">Laravel</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">PHP</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">HTML/CSS</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">MySQL</span>
-                    </div>
-                    <a href="https://github.com/Es-saiydy/la-Facult-de-M-decine-d-Oujda" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">GitHub</a>
-                </div>
-
-                <!-- Hexatropolis Agent -->
-                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-lg">
-                    <img src="img/hexatropolis.jpg" alt="Hexatropolis Agent" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-xl font-bold mb-2">Hexatropolis Agent Python</h3>
-                    <p class="mb-4">Agent Python pour jeu de stratégie Hexatropolis : optimisation de construction villes/routes sur carte hexagonale. Projet IA/algorithmes.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 px-2 py-1 rounded">Python</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">IA</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">Algorithmes</span>
-                    </div>
-                    <a href="https://github.com/Es-saiydy/hexatropolis-agent-python" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">GitHub</a>
-                </div>
-
-                <!-- Ateliers Langage C -->
-                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-lg">
-                    <img src="img/ateliers-c.jpg" alt="Ateliers C" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-xl font-bold mb-2">Ateliers Langage C</h3>
-                    <p class="mb-4">Ateliers pratiques en C : structures, tableaux, pointeurs, fichiers, algorithmes fondamentaux.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 px-2 py-1 rounded">C</span>
-                    </div>
-                    <a href="https://github.com/Es-saiydy/ateliers-langage-c" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">GitHub</a>
-                </div>
-
-                <!-- Mini Projets Java -->
-                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-lg">
-                    <img src="img/java-mini.jpg" alt="Mini Projets Java" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-xl font-bold mb-2">Mini Projets Java Client-Serveur</h3>
-                    <p class="mb-4">Mini-projets Java : réseau TCP/UDP, RMI, sockets, POO.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 px-2 py-1 rounded">Java</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">RMI</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">TCP/UDP</span>
-                    </div>
-                    <a href="https://github.com/Es-saiydy/mini-projets-java-client-serveur" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">GitHub</a>
-                </div>
-
-                <!-- WebService -->
-                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-lg">
-                    <img src="img/webservice.jpg" alt="WebService" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-xl font-bold mb-2">WebService</h3>
-                    <p class="mb-4">Projets de services web : REST (Analytics, MongoDB, Postgres), SOAP, WebSockets.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 px-2 py-1 rounded">JavaScript</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">HTML</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">REST</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">SOAP</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">WebSockets</span>
-                    </div>
-                    <a href="https://github.com/Es-saiydy/webService" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">GitHub</a>
-                </div>
-
-                <!-- My Auth API -->
-                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-lg">
-                    <img src="img/auth-api.jpg" alt="My Auth API" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-xl font-bold mb-2">My Auth API</h3>
-                    <p class="mb-4">API d'authentification pour gérer utilisateurs et sessions.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 px-2 py-1 rounded">JavaScript</span>
-                    </div>
-                    <a href="https://github.com/Es-saiydy/my-auth-api" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">GitHub</a>
-                </div>
-
-                <!-- Project Stage (Alhambra 2025) -->
-                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-lg">
-                    <img src="img/project-stage.jpg" alt="Project Stage" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-xl font-bold mb-2">Gestion des Employés (Stage Alhambra 2025)</h3>
-                    <p class="mb-4">Application de gestion employés (horaires, tâches, profils). Analyse, modélisation, base de données, rapports/insights.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 px-2 py-1 rounded">Java</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">SQL</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">Power BI</span>
-                    </div>
-                    <a href="https://github.com/Es-saiydy/project_stage" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">GitHub</a>
-                </div>
-
-                <!-- API Todo Liste -->
-                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-lg">
-                    <img src="img/apitodoliste.jpg" alt="API Todo Liste" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-xl font-bold mb-2">API Todo Liste</h3>
-                    <p class="mb-4">API pour gestion de tâches (todo list). Projet basique pour pratique API.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 px-2 py-1 rounded">JavaScript/Python ?</span> <!-- Ajoute tech réelle si connue -->
-                    </div>
-                    <a href="https://github.com/Es-saiydy/APITODOLISTE" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">GitHub</a>
-                </div>
-
-                <!-- Test CI2 -->
-                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-lg">
-                    <img src="img/test-ci2.jpg" alt="Test CI2" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-xl font-bold mb-2">Test CI2</h3>
-                    <p class="mb-4">Projet test pour CI/CD workflows en Python, avec tests et main script.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 px-2 py-1 rounded">Python</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">GitHub Actions</span>
-                    </div>
-                    <a href="https://github.com/Es-saiydy/test_ci2" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">GitHub</a>
-                </div>
-
-                <!-- Course CI -->
-                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-lg">
-                    <img src="img/course-ci.jpg" alt="Course CI" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-xl font-bold mb-2">Course CI</h3>
-                    <p class="mb-4">Repo éducatif pour cours sur Continuous Integration (CI), avec exercices, TP, GitHub Actions et GitLab CI.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 px-2 py-1 rounded">JavaScript</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">Shell</span>
-                        <span class="bg-gray-200 px-2 py-1 rounded">CI/CD</span>
-                    </div>
-                    <a href="https://github.com/Es-saiydy/course-ci" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">GitHub</a>
-                </div>
-
-                <!-- Courses CI (fork) -->
-                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-lg">
-                    <img src="img/courses-ci.jpg" alt="Courses CI" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-xl font-bold mb-2">Courses CI (Fork)</h3>
-                    <p class="mb-4">Fork d'un repo pour cours CI, avec exercices et workflows.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 px-2 py-1 rounded">JavaScript</span>
-                    </div>
-                    <a href="https://github.com/Es-saiydy/courses-ci" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">GitHub</a>
-                </div>
-
-                <!-- My Auth API. (duplicate?) -->
-                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-lg">
-                    <img src="img/auth-api-duplicate.jpg" alt="My Auth API Duplicate" class="w-full h-48 object-cover rounded-t-lg mb-4">
-                    <h3 class="text-xl font-bold mb-2">My Auth API (Variante)</h3>
-                    <p class="mb-4">Variante de l'API d'authentification.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-gray-200 px-2 py-1 rounded">JavaScript</span>
-                    </div>
-                    <a href="https://github.com/Es-saiydy/my-auth-api." target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">GitHub</a>
-                </div>
-            </div>
+      <div class="card">
+        <h3>Frameworks & notions</h3>
+        <div class="skill-list">
+          <span class="skill-tag">Laravel</span>
+          <span class="skill-tag">Symfony</span>
+          <span class="skill-tag">Django</span>
+          <span class="skill-tag">React / React Native</span>
+          <span class="skill-tag">Node.js (bases)</span>
+          <span class="skill-tag">Angular (bases)</span>
         </div>
-    </section>
+      </div>
 
-    <!-- Expériences -->
-    <section id="experience" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">Expériences Professionnelles</h2>
-            <div class="space-y-8 max-w-3xl mx-auto">
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 text-right w-32 mr-4">
-                        <strong>Mars - Juin 2025</strong><br>Alhambra Design
-                    </div>
-                    <div>Application de gestion des employés (horaires, tâches) – Analyse, BD, rapports Power BI.</div>
-                </div>
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 text-right w-32 mr-4">
-                        <strong>Mai - Juin 2024</strong><br>Faculté de Médecine Oujda
-                    </div>
-                    <div>Application web logistique (Laravel + PHP + MySQL).</div>
-                </div>
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 text-right w-32 mr-4">
-                        <strong>Juillet 2023</strong><br>Alhambra Design
-                    </div>
-                    <div>Application desktop gestion salariés (VB.NET).</div>
-                </div>
-            </div>
+      <div class="card">
+        <h3>IA & Data</h3>
+        <div class="skill-list">
+          <span class="skill-tag">Machine Learning (bases)</span>
+          <span class="skill-tag">Vision par ordinateur : YOLO, OpenCV</span>
+          <span class="skill-tag">NumPy / Matplotlib</span>
+          <span class="skill-tag">Data visualisation : Tableau, Power BI</span>
         </div>
-    </section>
+      </div>
 
-    <!-- Contact -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-8">Contact</h2>
-            <p class="text-lg mb-4">abiressaiydyl@gmail.com | +33 6 69 36 40 47 | Orléans, France</p>
-            <form class="max-w-md mx-auto space-y-4">
-                <input type="text" placeholder="Votre nom" class="w-full p-2 border rounded">
-                <input type="email" placeholder="Votre email" class="w-full p-2 border rounded">
-                <textarea placeholder="Votre message" class="w-full p-2 border rounded h-32"></textarea>
-                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">Envoyer</button>
-            </form>
+      <div class="card">
+        <h3>Bases de données & Outils</h3>
+        <div class="skill-list">
+          <span class="skill-tag">MySQL / PostgreSQL / SQL Server</span>
+          <span class="skill-tag">Modélisation : UML, Merise</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Talend / Orange Data Mining</span>
+          <span class="skill-tag">Git / GitHub</span>
         </div>
-    </section>
+      </div>
 
-    <!-- Footer -->
-    <footer class="bg-blue-900 text-white py-4 text-center">
-        © 2026 Abir Es-Saiydy - Tous droits réservés
-    </footer>
+      <div class="card">
+        <h3>Méthodes & Langues</h3>
+        <div class="skill-list">
+          <span class="skill-tag">Méthodologie Agile / Scrum</span>
+          <span class="skill-tag">Arabe : Maternelle</span>
+          <span class="skill-tag">Français : courant</span>
+          <span class="skill-tag">Anglais : Intermédiaire</span>
+        </div>
+      </div>
 
-    <script>
-        const toggle = document.getElementById('darkModeToggle');
-        toggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark');
-            toggle.innerHTML = document.body.classList.contains('dark') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        });
-    </script>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projets</h2>
+    <div class="projects-grid">
+
+      <div class="card">
+        <h3 class="project-title">WildLens – Identification d'empreintes animales</h3>
+        <p>Création d'une application mobile d'identification d'empreintes animales (React Native + Spring Boot). Modèle YOLO pour la classification d'images. API Python conteneurisée pour la communication entre modèle IA, front-end et base de données. Stockage PostgreSQL (photo, espèce, date, géolocalisation).</p>
+        <div class="project-tech">
+          <span class="tech-tag">React Native</span>
+          <span class="tech-tag">Spring Boot</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">YOLO</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">PostgreSQL</span>
+        </div>
+        <a href="https://github.com/Es-saiydy/MSPR-Projet-IA-WildLens-" target="_blank" class="project-link"><i class="fab fa-github"></i> Voir sur GitHub</a>
+      </div>
+
+      <div class="card">
+        <h3 class="project-title">Gestion d'un opticien – Application + Site web (PFE)</h3>
+        <p>Développement d'une application et d'un site web pour la gestion d'un opticien. Analyse et Conception UML/Merise. VB.NET (partie administrative), PHP + JavaScript + HTML/CSS (site client : commandes en ligne, gestion clients).</p>
+        <div class="project-tech">
+          <span class="tech-tag">VB.NET</span>
+          <span class="tech-tag">PHP</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">HTML/CSS</span>
+          <span class="tech-tag">MySQL</span>
+        </div>
+        <a href="https://github.com/Es-saiydy/Gestion-d-opticien" target="_blank" class="project-link"><i class="fab fa-github"></i> Voir sur GitHub</a>
+      </div>
+
+      <div class="card">
+        <h3 class="project-title">Gestion logistique – Faculté de Médecine Oujda</h3>
+        <p>Application web de gestion de service logistique (stocks, livraisons, fournisseurs). Analyse et conception UML. Développement Laravel, PHP, HTML/CSS.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Laravel</span>
+          <span class="tech-tag">PHP</span>
+          <span class="tech-tag">HTML/CSS</span>
+          <span class="tech-tag">MySQL</span>
+        </div>
+        <a href="https://github.com/Es-saiydy/la-Facult-de-M-decine-d-Oujda" target="_blank" class="project-link"><i class="fab fa-github"></i> Voir sur GitHub</a>
+      </div>
+
+      <div class="card">
+        <h3 class="project-title">Gestion des employés – Stage Alhambra Design 2025</h3>
+        <p>Création d'une application de gestion des employés (horaires, tâches, profils). Analyse et modélisation complète, développement base de données, rapports et insights.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">Power BI</span>
+        </div>
+        <a href="https://github.com/Es-saiydy/project_stage" target="_blank" class="project-link"><i class="fab fa-github"></i> Voir sur GitHub</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">Expériences professionnelles</h2>
+
+    <div class="exp-item">
+      <div class="exp-date">Mars – Juin 2025</div>
+      <div class="exp-content card">
+        <h3>Alhambra Design</h3>
+        <p>Création d'une application de gestion des employés (horaires, tâches, profils). Analyse et modélisation complète, développement base de données, analyse des données pour rapports et insights.</p>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Mai – Juin 2024</div>
+      <div class="exp-content card">
+        <h3>Faculté de Médecine – Oujda</h3>
+        <p>Développement d'une application web de gestion de service logistique. Analyse et conception UML. Développement : Laravel, HTML/CSS, PHP (stocks, livraisons, fournisseurs).</p>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Juillet 2023</div>
+      <div class="exp-content card">
+        <h3>Alhambra Design</h3>
+        <p>Développement d'une application desktop de gestion des salariés. Analyse et conception Merise. Développement VB.NET (salaires, formations, congés).</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-grid">
+
+      <div class="contact-card card">
+        <div class="contact-icon"><i class="fas fa-phone-volume"></i></div>
+        <h3>Téléphone</h3>
+        <p><a href="tel:+33669364047">+33 6 69 36 40 47</a></p>
+      </div>
+
+      <div class="contact-card card">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <h3>Email</h3>
+        <p><a href="mailto:abiressaiydyl@gmail.com">abiressaiydyl@gmail.com</a></p>
+      </div>
+
+      <div class="contact-card card">
+        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h3>Localisation</h3>
+        <p>Orléans, France</p>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:4rem;">
+      <a href="mailto:abiressaiydyl@gmail.com" class="btn btn-primary" style="font-size:1.3rem; padding:1.1rem 3rem;">
+        <i class="fas fa-paper-plane"></i> Me contacter directement
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Abir Es-Saiydy – Tous droits réservés</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/abir-es-saiydy-3b3285306/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Es-saiydy" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
