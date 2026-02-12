@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Abir Es-Saiydy – Développeuse IA & Data</title>
+  <title>ABIR ES-SAIYDY – Développeuse IA & Data</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -16,11 +16,13 @@
       --bg: #0f172a;
       --text: #e2e8f0;
       --text-light: #94a3b8;
-      --primary: #7c3aed;
-      --primary-dark: #6d28d9;
-      --accent: #a78bfa;
+      --primary: #e63946;           /* rouge exact de ta photo/vidéo */
+      --primary-dark: #c62839;
+      --accent: #f48fb1;
       --card: #1e293b;
       --border: #334155;
+      --white: #ffffff;
+      --black: #111111;
     }
 
     * {
@@ -86,55 +88,72 @@
       color: var(--accent);
     }
 
-    /* Hero */
+    /* Hero – EXACTEMENT comme la vidéo Shorts */
     #hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding-top: 100px;
+      justify-content: center;
+      padding: 120px 20px 80px;
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      text-align: center;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .hero-left h1 {
-      font-size: 3.8rem;
-      margin-bottom: 0.8rem;
-      background: linear-gradient(90deg, #c084fc, #a78bfa, #7c3aed);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-left h2 {
-      font-size: 1.6rem;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
+    .hero-content {
+      max-width: 800px;
     }
 
     .hero-photo {
-      width: 280px;
-      height: 280px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       object-fit: cover;
-      border: 5px solid rgba(124, 58, 237, 0.3);
-      box-shadow: 0 0 60px rgba(124, 58, 237, 0.25);
-      margin: 0 auto;
-      display: block;
+      border: 8px solid var(--primary);
+      box-shadow: 0 0 70px rgba(230, 57, 70, 0.45);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-name {
+      font-size: 5.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+
+    .hero-subtitle {
+      font-size: 1.35rem;
+      color: var(--text-light);
+      margin-bottom: 3.5rem;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.7rem;
-      padding: 0.9rem 2.2rem;
+      gap: 0.8rem;
+      padding: 1.1rem 2.6rem;
       border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
       text-decoration: none;
-      font-weight: 500;
       transition: all 0.35s;
     }
 
@@ -145,8 +164,8 @@
 
     .btn-primary:hover {
       background: var(--primary-dark);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(124, 58, 237, 0.35);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(230, 57, 70, 0.45);
     }
 
     .btn-outline {
@@ -157,21 +176,18 @@
     .btn-outline:hover {
       background: var(--primary);
       color: white;
-      transform: translateY(-4px);
+      transform: translateY(-5px);
     }
 
-    /* Sections */
-    section {
-      padding: 120px 0;
-    }
+    /* Le reste du site reste comme ton code */
+    section { padding: 100px 0; }
 
     h2.section-title {
       font-size: 2.6rem;
       text-align: center;
       margin-bottom: 4rem;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--primary);
+      font-weight: 700;
     }
 
     .card {
@@ -189,7 +205,6 @@
       border-color: var(--primary);
     }
 
-    /* Compétences */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -209,12 +224,12 @@
     }
 
     .skill-tag {
-      background: rgba(124, 58, 237, 0.15);
-      color: var(--accent);
+      background: rgba(230, 57, 70, 0.12);
+      color: var(--primary);
       padding: 0.55rem 1.1rem;
       border-radius: 50px;
       font-size: 0.95rem;
-      border: 1px solid rgba(124, 58, 237, 0.3);
+      border: 1px solid rgba(230, 57, 70, 0.3);
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
@@ -224,7 +239,6 @@
       font-size: 1.1rem;
     }
 
-    /* Projets */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -245,12 +259,12 @@
     }
 
     .tech-tag {
-      background: rgba(167, 139, 250, 0.18);
-      color: var(--accent);
+      background: rgba(230, 57, 70, 0.15);
+      color: var(--primary);
       padding: 0.45rem 1rem;
       border-radius: 50px;
       font-size: 0.88rem;
-      border: 1px solid rgba(167, 139, 250, 0.3);
+      border: 1px solid rgba(230, 57, 70, 0.3);
     }
 
     .project-buttons {
@@ -291,7 +305,6 @@
       transform: translateY(-3px);
     }
 
-    /* Expériences */
     .exp-item {
       display: grid;
       grid-template-columns: 180px 1fr;
@@ -300,7 +313,7 @@
     }
 
     .exp-date {
-      color: var(--accent);
+      color: var(--primary);
       font-weight: 600;
       font-size: 1.1rem;
       text-align: right;
@@ -311,7 +324,6 @@
       margin-bottom: 0.6rem;
     }
 
-    /* Contact */
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -330,7 +342,6 @@
       margin-bottom: 1.2rem;
     }
 
-    /* Footer */
     footer {
       background: rgba(15, 23, 42, 0.8);
       padding: 4rem 0 2rem;
@@ -352,7 +363,7 @@
     }
 
     .social-links a:hover {
-      color: var(--accent);
+      color: var(--primary);
       transform: translateY(-5px);
     }
 
@@ -383,29 +394,33 @@
   </div>
 </header>
 
+<!-- Hero exactement comme la vidéo Shorts -->
 <section id="hero">
   <div class="container">
-    <div class="hero-grid">
-      <div class="hero-left">
-        <h1>ABIR ES-SAIYDY</h1>
-        <h2>Développeuse IA & Data</h2>
-        <p style="font-size:1.22rem; margin:1.8rem 0 2.5rem; max-width:620px;">
-          Étudiante MIAGE L3 | Recherche alternance cycle ingénieur Informatique / IA<br>
-          Rentrée septembre 2026 – France
-        </p>
-        <div style="display:flex; gap:1.4rem; flex-wrap:wrap;">
-          <a href="https://www.linkedin.com/in/abir-es-saiydy-3b3285306/" target="_blank" class="btn btn-primary"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com/Es-saiydy" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
-          <a href="assets/img/cv-abir-essaiydy.pdf" download class="btn btn-outline"><i class="fas fa-file-pdf"></i> Télécharger CV</a>
-        </div>
-      </div>
-      <div>
-        <img src="assets/img/photo.jpeg" alt="Abir Es-Saiydy" class="hero-photo">
+    <div class="hero-content">
+      <img src="assets/img/photo.jpeg" alt="Abir Es-Saiydy" class="hero-photo">
+      <h1 class="hero-name">ABIR ES-SAIYDY</h1>
+      <h2 class="hero-title">Développeuse IA & Data</h2>
+      <p class="hero-subtitle">
+        Étudiante MIAGE L3 | Recherche alternance cycle ingénieur Informatique / IA<br>
+        Rentrée septembre 2026 – France
+      </p>
+      <div class="hero-buttons">
+        <a href="https://www.linkedin.com/in/abir-es-saiydy-3b3285306/" target="_blank" class="btn btn-primary">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/Es-saiydy" target="_blank" class="btn btn-primary">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="assets/img/cv-abir-essaiydy.pdf" download class="btn btn-outline">
+          <i class="fas fa-file-pdf"></i> Télécharger CV
+        </a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Profil -->
 <section id="about">
   <div class="container">
     <h2 class="section-title">Profil</h2>
@@ -423,6 +438,7 @@
   </div>
 </section>
 
+<!-- Compétences avec icônes -->
 <section id="skills" style="background:rgba(30,41,59,0.4);">
   <div class="container">
     <h2 class="section-title">Compétences</h2>
@@ -494,25 +510,23 @@
   </div>
 </section>
 
+<!-- Projets avec deux boutons chacun (sans image) -->
 <section id="projects">
   <div class="container">
     <h2 class="section-title">Projets</h2>
     <div class="projects-grid">
 
-      <!-- WildLens -->
       <div class="card">
         <h3 class="project-title">WildLens – Identification d'empreintes animales</h3>
-        <p>Création d'une application mobile d'identification d'empreintes animales (React Native + Spring Boot). Modèle YOLO pour la classification d'images. API Python conteneurisée.</p>
+        <p>Application mobile React Native + Spring Boot avec modèle YOLOv8 pour détecter les espèces via photo. API Python dockérisée, stockage PostgreSQL avec géolocalisation.</p>
         <div class="project-tech">
           <span class="tech-tag">React Native</span>
           <span class="tech-tag">Spring Boot</span>
-          <span class="tech-tag">Python</span>
           <span class="tech-tag">YOLO</span>
           <span class="tech-tag">Docker</span>
-          <span class="tech-tag">PostgreSQL</span>
         </div>
         <div class="project-buttons">
-          <a href="wildlens.html" class="btn-project">
+          <a href="wildlens-report.html" class="btn-project">
             <i class="fas fa-eye"></i> Voir projet
           </a>
           <a href="https://github.com/Es-saiydy/MSPR-Projet-IA-WildLens-" target="_blank" class="btn-github">
@@ -521,19 +535,16 @@
         </div>
       </div>
 
-      <!-- Gestion Opticien -->
       <div class="card">
         <h3 class="project-title">Gestion d'un opticien – PFE</h3>
         <p>Application desktop VB.NET + site web PHP pour gestion clients, commandes en ligne, stocks et ventes.</p>
         <div class="project-tech">
           <span class="tech-tag">VB.NET</span>
           <span class="tech-tag">PHP</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">HTML/CSS</span>
           <span class="tech-tag">MySQL</span>
         </div>
         <div class="project-buttons">
-          <a href="opticien.html" class="btn-project">
+          <a href="opticien-report.html" class="btn-project">
             <i class="fas fa-eye"></i> Voir projet
           </a>
           <a href="https://github.com/Es-saiydy/Gestion-d-opticien" target="_blank" class="btn-github">
@@ -542,18 +553,16 @@
         </div>
       </div>
 
-      <!-- Gestion logistique Médecine -->
       <div class="card">
         <h3 class="project-title">Gestion logistique – Faculté de Médecine Oujda</h3>
         <p>Application web Laravel pour gestion des stocks, fournisseurs et livraisons.</p>
         <div class="project-tech">
           <span class="tech-tag">Laravel</span>
           <span class="tech-tag">PHP</span>
-          <span class="tech-tag">HTML/CSS</span>
           <span class="tech-tag">MySQL</span>
         </div>
         <div class="project-buttons">
-          <a href="medecine-oujda.html" class="btn-project">
+          <a href="medecine-report.html" class="btn-project">
             <i class="fas fa-eye"></i> Voir projet
           </a>
           <a href="https://github.com/Es-saiydy/la-Facult-de-M-decine-d-Oujda" target="_blank" class="btn-github">
@@ -562,17 +571,16 @@
         </div>
       </div>
 
-      <!-- Stage Alhambra -->
       <div class="card">
-        <h3 class="project-title">Gestion des employés – Stage 2025</h3>
-        <p>Application de gestion employés : horaires, tâches, profils, base de données et rapports Power BI.</p>
+        <h3 class="project-title">Gestion des employés – Stage Alhambra 2025</h3>
+        <p>Application de gestion des employés (horaires, tâches, profils). Analyse, modélisation, base de données, rapports Power BI.</p>
         <div class="project-tech">
           <span class="tech-tag">Java</span>
           <span class="tech-tag">SQL</span>
           <span class="tech-tag">Power BI</span>
         </div>
         <div class="project-buttons">
-          <a href="stage-alhambra.html" class="btn-project">
+          <a href="stage-report.html" class="btn-project">
             <i class="fas fa-eye"></i> Voir projet
           </a>
           <a href="https://github.com/Es-saiydy/project_stage" target="_blank" class="btn-github">
@@ -585,6 +593,7 @@
   </div>
 </section>
 
+<!-- Expériences -->
 <section id="experience">
   <div class="container">
     <h2 class="section-title">Expériences professionnelles</h2>
@@ -615,6 +624,7 @@
   </div>
 </section>
 
+<!-- Contact -->
 <section id="contact">
   <div class="container">
     <h2 class="section-title">Contact</h2>
@@ -648,6 +658,7 @@
   </div>
 </section>
 
+<!-- Footer -->
 <footer>
   <div class="container">
     <p>© 2026 Abir Es-Saiydy – Tous droits réservés</p>
