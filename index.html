@@ -23,245 +23,326 @@
       --border: #334155;
     }
 
-    * { margin:0; padding:0; box-sizing:border-box; }
-
-    body {
-      font-family:'Poppins',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.7;
-      min-height:100vh;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .container { max-width:1100px; margin:0 auto; padding:0 20px; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
     header {
-      background:rgba(15,23,42,0.92);
-      backdrop-filter:blur(10px);
-      position:fixed;
-      width:100%;
-      top:0;
-      z-index:1000;
-      border-bottom:1px solid var(--border);
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
     }
 
     nav {
-      height:80px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
-      font-size:1.7rem;
-      font-weight:700;
-      background:linear-gradient(90deg,var(--primary),var(--accent));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+      font-size: 1.7rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .nav-links {
-      display:flex;
-      gap:2.2rem;
-      list-style:none;
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
     }
 
     .nav-links a {
-      color:var(--text-light);
-      text-decoration:none;
-      font-weight:500;
-      transition:all 0.3s;
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
     }
 
     .nav-links a:hover,
-    .nav-links a.active { color:var(--accent); }
+    .nav-links a.active {
+      color: var(--accent);
+    }
 
     /* Hero */
     #hero {
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      padding-top:100px;
-      background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     }
 
     .hero-grid {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:4rem;
-      align-items:center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
     }
 
     .hero-left h1 {
-      font-size:3.8rem;
-      margin-bottom:0.8rem;
-      background:linear-gradient(90deg,#c084fc,#a78bfa,#7c3aed);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+      font-size: 3.8rem;
+      margin-bottom: 0.8rem;
+      background: linear-gradient(90deg, #c084fc, #a78bfa, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .hero-left h2 { font-size:1.6rem; color:var(--accent); margin-bottom:1.5rem; }
+    .hero-left h2 {
+      font-size: 1.6rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
 
     .hero-photo {
-      width:280px;
-      height:280px;
-      border-radius:50%;
-      object-fit:cover;
-      border:5px solid rgba(124,58,237,0.3);
-      box-shadow:0 0 60px rgba(124,58,237,0.25);
-      margin:0 auto;
-      display:block;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid rgba(124, 58, 237, 0.3);
+      box-shadow: 0 0 60px rgba(124, 58, 237, 0.25);
+      margin: 0 auto;
+      display: block;
     }
 
-    .btn, .project-btn {
-      display:inline-flex;
-      align-items:center;
-      gap:0.7rem;
-      padding:0.9rem 2.2rem;
-      border-radius:50px;
-      text-decoration:none;
-      font-weight:500;
-      transition:all 0.35s;
-      cursor:pointer;
-      border:none;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.35s;
     }
 
-    .btn-primary, .project-btn {
-      background:var(--primary);
-      color:white;
+    .btn-primary {
+      background: var(--primary);
+      color: white;
     }
 
-    .btn-primary:hover, .project-btn:hover {
-      background:var(--primary-dark);
-      transform:translateY(-4px);
-      box-shadow:0 12px 30px rgba(124,58,237,0.35);
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(124, 58, 237, 0.35);
     }
 
-    /* Sections */
-    section { padding:120px 0; }
-
-    h2.section-title {
-      font-size:2.6rem;
-      text-align:center;
-      margin-bottom:4rem;
-      background:linear-gradient(90deg,var(--primary),var(--accent));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
     }
 
-    .card {
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:2.2rem;
-      margin-bottom:2rem;
-      transition:all 0.4s;
-    }
-
-    .card:hover {
-      transform:translateY(-10px);
-      box-shadow:0 20px 50px rgba(0,0,0,0.4);
-      border-color:var(--primary);
-    }
-
-    /* Skills icons */
-    .skill-tag {
-      background:rgba(124,58,237,0.15);
-      color:var(--accent);
-      padding:0.6rem 1.2rem;
-      border-radius:50px;
-      font-size:0.95rem;
-      border:1px solid rgba(124,58,237,0.3);
-      display:inline-flex;
-      align-items:center;
-      gap:0.6rem;
-    }
-
-    .skill-icon { font-size:1.1rem; }
-
-    /* Projets */
-    .projects-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
-      gap:2.2rem;
-    }
-
-    .project-title { font-size:1.45rem; color:var(--text); margin-bottom:0.9rem; }
-
-    .project-tech {
-      display:flex;
-      flex-wrap:wrap;
-      gap:0.7rem;
-      margin:1.2rem 0;
-    }
-
-    .tech-tag {
-      background:rgba(167,139,250,0.18);
-      color:var(--accent);
-      padding:0.45rem 1rem;
-      border-radius:50px;
-      font-size:0.88rem;
-      border:1px solid rgba(167,139,250,0.3);
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-4px);
     }
 
     .project-btn {
-      margin-top:1.5rem;
-      width:fit-content;
+      margin-top: 1.5rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all 0.3s;
     }
 
-    /* Expériences & Contact & Footer (inchangés) */
+    .project-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    /* Sections */
+    section {
+      padding: 120px 0;
+    }
+
+    h2.section-title {
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 4rem;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.2rem;
+      margin-bottom: 2rem;
+      transition: all 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      border-color: var(--primary);
+    }
+
+    /* Compétences avec icônes */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .skill-category h3 {
+      color: var(--accent);
+      font-size: 1.35rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .skill-tag {
+      background: rgba(124, 58, 237, 0.15);
+      color: var(--accent);
+      padding: 0.55rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      border: 1px solid rgba(124, 58, 237, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .skill-icon {
+      font-size: 1.1rem;
+    }
+
+    /* Projets */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2.2rem;
+    }
+
+    .project-title {
+      font-size: 1.45rem;
+      color: var(--text);
+      margin-bottom: 0.9rem;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin: 1.2rem 0;
+    }
+
+    .tech-tag {
+      background: rgba(167, 139, 250, 0.18);
+      color: var(--accent);
+      padding: 0.45rem 1rem;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      border: 1px solid rgba(167, 139, 250, 0.3);
+    }
+
+    /* Expériences */
     .exp-item {
-      display:grid;
-      grid-template-columns:180px 1fr;
-      gap:2rem;
-      margin-bottom:2.5rem;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
     }
 
     .exp-date {
-      color:var(--accent);
-      font-weight:600;
-      font-size:1.1rem;
-      text-align:right;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: right;
     }
 
+    .exp-content h3 {
+      color: white;
+      margin-bottom: 0.6rem;
+    }
+
+    /* Contact */
     .contact-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:2rem;
-      margin-top:3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
     }
 
-    .contact-card { text-align:center; padding:2.5rem 1.5rem; }
+    .contact-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+    }
 
-    .contact-icon { font-size:2.8rem; color:var(--primary); margin-bottom:1.2rem; }
+    .contact-icon {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+    }
 
+    /* Footer */
     footer {
-      background:rgba(15,23,42,0.8);
-      padding:4rem 0 2rem;
-      text-align:center;
-      border-top:1px solid var(--border);
+      background: rgba(15, 23, 42, 0.8);
+      padding: 4rem 0 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
     }
 
     .social-links {
-      display:flex;
-      justify-content:center;
-      gap:2rem;
-      margin:1.5rem 0 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1.5rem 0 2rem;
     }
 
     .social-links a {
-      color:var(--text-light);
-      font-size:1.8rem;
-      transition:all 0.3s;
+      color: var(--text-light);
+      font-size: 1.8rem;
+      transition: all 0.3s;
     }
 
-    .social-links a:hover { color:var(--accent); transform:translateY(-5px); }
+    .social-links a:hover {
+      color: var(--accent);
+      transform: translateY(-5px);
+    }
 
-    @media (max-width:900px) {
-      .hero-grid { grid-template-columns:1fr; text-align:center; }
-      .hero-photo { margin:2rem auto; }
-      .exp-item { grid-template-columns:1fr; }
-      .exp-date { text-align:left; margin-bottom:1rem; }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-photo { margin: 2rem auto; }
+      .exp-item { grid-template-columns: 1fr; }
+      .exp-date { text-align: left; margin-bottom: 1rem; }
     }
   </style>
 </head>
@@ -300,7 +381,7 @@
         </div>
       </div>
       <div>
-        <img src="assets/img/photo.jpg" alt="Abir Es-Saiydy" class="hero-photo">
+        <img src="assets/img/photo.jpeg" alt="Abir Es-Saiydy" class="hero-photo">
       </div>
     </div>
   </div>
@@ -331,61 +412,62 @@
       <div class="card">
         <h3>Langages de programmation</h3>
         <div class="skill-list">
-          <span class="skill-tag"><i class="fab fa-java skill-icon"></i> Java (POO, MVC, Java SE)</span>
-          <span class="skill-tag"><i class="fab fa-python skill-icon"></i> Python</span>
-          <span class="skill-tag"><i class="fas fa-code skill-icon"></i> C</span>
-          <span class="skill-tag"><i class="fas fa-terminal skill-icon"></i> VB.NET</span>
-          <span class="skill-tag"><i class="fas fa-database skill-icon"></i> SQL / PL/SQL</span>
+          <span class="skill-tag"><i class="fab fa-java skill-icon"></i>Java (POO, MVC, Java SE)</span>
+          <span class="skill-tag"><i class="fab fa-python skill-icon"></i>Python</span>
+          <span class="skill-tag"><i class="fas fa-code skill-icon"></i>C</span>
+          <span class="skill-tag"><i class="fas fa-terminal skill-icon"></i>VB.NET</span>
+          <span class="skill-tag"><i class="fas fa-database skill-icon"></i>SQL / PL/SQL</span>
         </div>
       </div>
 
       <div class="card">
         <h3>Développement Web</h3>
         <div class="skill-list">
-          <span class="skill-tag"><i class="fab fa-html5 skill-icon"></i> HTML5 / CSS3 / JavaScript</span>
-          <span class="skill-tag"><i class="fab fa-php skill-icon"></i> PHP</span>
+          <span class="skill-tag"><i class="fab fa-html5 skill-icon"></i>HTML5 / CSS3 / JavaScript</span>
+          <span class="skill-tag"><i class="fab fa-php skill-icon"></i>PHP</span>
         </div>
       </div>
 
       <div class="card">
         <h3>Frameworks & notions</h3>
         <div class="skill-list">
-          <span class="skill-tag"><i class="fab fa-laravel skill-icon"></i> Laravel</span>
-          <span class="skill-tag"><i class="fas fa-cogs skill-icon"></i> Symfony</span>
-          <span class="skill-tag"><i class="fab fa-python skill-icon"></i> Django</span>
-          <span class="skill-tag"><i class="fab fa-react skill-icon"></i> React / React Native</span>
-          <span class="skill-tag"><i class="fab fa-node-js skill-icon"></i> Node.js (bases)</span>
-          <span class="skill-tag"><i class="fas fa-code skill-icon"></i> Angular (bases)</span>
+          <span class="skill-tag"><i class="fab fa-laravel skill-icon"></i>Laravel</span>
+          <span class="skill-tag"><i class="fas fa-cogs skill-icon"></i>Symfony</span>
+          <span class="skill-tag"><i class="fab fa-python skill-icon"></i>Django</span>
+          <span class="skill-tag"><i class="fab fa-react skill-icon"></i>React / React Native</span>
+          <span class="skill-tag"><i class="fab fa-node-js skill-icon"></i>Node.js (bases)</span>
+          <span class="skill-tag"><i class="fab fa-angular skill-icon"></i>Angular (bases)</span>
         </div>
       </div>
 
       <div class="card">
-        <h3>IA & Data</h3>
+        <h3>Intelligence Artificielle & Data</h3>
         <div class="skill-list">
-          <span class="skill-tag"><i class="fas fa-brain skill-icon"></i> Machine Learning (bases)</span>
-          <span class="skill-tag"><i class="fas fa-eye skill-icon"></i> YOLO / OpenCV</span>
-          <span class="skill-tag"><i class="fas fa-chart-bar skill-icon"></i> NumPy / Matplotlib</span>
-          <span class="skill-tag"><i class="fas fa-chart-line skill-icon"></i> Tableau / Power BI</span>
+          <span class="skill-tag"><i class="fas fa-brain skill-icon"></i>Machine Learning (bases)</span>
+          <span class="skill-tag"><i class="fas fa-eye skill-icon"></i>YOLO / OpenCV</span>
+          <span class="skill-tag"><i class="fas fa-chart-bar skill-icon"></i>NumPy / Matplotlib</span>
+          <span class="skill-tag"><i class="fas fa-chart-line skill-icon"></i>Tableau / Power BI</span>
         </div>
       </div>
 
       <div class="card">
         <h3>Bases de données & Outils</h3>
         <div class="skill-list">
-          <span class="skill-tag"><i class="fas fa-database skill-icon"></i> MySQL / PostgreSQL / SQL Server</span>
-          <span class="skill-tag"><i class="fas fa-sitemap skill-icon"></i> UML / Merise</span>
-          <span class="skill-tag"><i class="fab fa-docker skill-icon"></i> Docker</span>
-          <span class="skill-tag"><i class="fas fa-code-branch skill-icon"></i> Git / GitHub</span>
+          <span class="skill-tag"><i class="fas fa-database skill-icon"></i>MySQL / PostgreSQL / SQL Server</span>
+          <span class="skill-tag"><i class="fas fa-sitemap skill-icon"></i>UML / Merise</span>
+          <span class="skill-tag"><i class="fab fa-docker skill-icon"></i>Docker</span>
+          <span class="skill-tag"><i class="fas fa-tools skill-icon"></i>Talend / Orange Data Mining</span>
+          <span class="skill-tag"><i class="fab fa-git-alt skill-icon"></i>Git / GitHub</span>
         </div>
       </div>
 
       <div class="card">
         <h3>Méthodes & Langues</h3>
         <div class="skill-list">
-          <span class="skill-tag"><i class="fas fa-users-cog skill-icon"></i> Agile / Scrum</span>
-          <span class="skill-tag"><i class="fas fa-globe skill-icon"></i> Arabe : Maternelle</span>
-          <span class="skill-tag"><i class="fas fa-language skill-icon"></i> Français : courant</span>
-          <span class="skill-tag"><i class="fas fa-language skill-icon"></i> Anglais : Intermédiaire</span>
+          <span class="skill-tag"><i class="fas fa-users-cog skill-icon"></i>Agile / Scrum</span>
+          <span class="skill-tag"><i class="fas fa-globe skill-icon"></i>Arabe : Maternelle</span>
+          <span class="skill-tag"><i class="fas fa-language skill-icon"></i>Français : courant</span>
+          <span class="skill-tag"><i class="fas fa-language skill-icon"></i>Anglais : Intermédiaire</span>
         </div>
       </div>
 
@@ -416,7 +498,7 @@
       <div class="card">
         <img src="assets/img/opticien.jpg" alt="Opticien" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
         <h3 class="project-title">Gestion d'un opticien – Application + Site web (PFE)</h3>
-        <p>Application desktop VB.NET + site web PHP pour gestion complète (stocks, ventes, clients, fournisseurs, commandes en ligne). Conception UML/Merise.</p>
+        <p>Développement d'une application et d'un site web pour la gestion d'un opticien. Analyse et Conception UML/Merise. VB.NET (partie administrative), PHP + JavaScript + HTML/CSS (site client).</p>
         <div class="project-tech">
           <span class="tech-tag">VB.NET</span>
           <span class="tech-tag">PHP</span>
@@ -429,7 +511,7 @@
 
       <div class="card">
         <img src="assets/img/medecine-oujda.jpg" alt="Logistique Médecine" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
-        <h3 class="project-title">Gestion Logistique Faculté Médecine Oujda</h3>
+        <h3 class="project-title">Gestion logistique – Faculté de Médecine Oujda</h3>
         <p>Application web Laravel + PHP pour gestion stocks, livraisons, fournisseurs. Conception UML.</p>
         <div class="project-tech">
           <span class="tech-tag">Laravel</span>
@@ -443,7 +525,7 @@
 
       <div class="card">
         <img src="assets/img/projet_stage.png" alt="Stage Alhambra" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
-        <h3 class="project-title">Gestion Employés – Stage Alhambra Design 2025</h3>
+        <h3 class="project-title">Gestion des employés – Stage Alhambra Design 2025</h3>
         <p>Application de gestion des employés (horaires, tâches, profils). Analyse, modélisation, base de données, rapports Power BI.</p>
         <div class="project-tech">
           <span class="tech-tag">Java</span>
@@ -459,7 +541,6 @@
   </div>
 </section>
 
-<!-- Expériences (inchangée) -->
 <section id="experience">
   <div class="container">
     <h2 class="section-title">Expériences professionnelles</h2>
@@ -487,11 +568,9 @@
         <p>Développement d'une application desktop de gestion des salariés. Analyse et conception Merise. Développement VB.NET (salaires, formations, congés).</p>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- Contact (inchangé) -->
 <section id="contact">
   <div class="container">
     <h2 class="section-title">Contact</h2>
