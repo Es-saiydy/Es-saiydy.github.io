@@ -24,6 +24,7 @@
     }
 
     * { margin:0; padding:0; box-sizing:border-box; }
+
     body {
       font-family:'Poppins',sans-serif;
       background:var(--bg);
@@ -31,6 +32,7 @@
       line-height:1.7;
       min-height:100vh;
     }
+
     .container { max-width:1100px; margin:0 auto; padding:0 20px; }
 
     header {
@@ -111,7 +113,7 @@
       display:block;
     }
 
-    .btn {
+    .btn, .project-btn {
       display:inline-flex;
       align-items:center;
       gap:0.7rem;
@@ -120,28 +122,19 @@
       text-decoration:none;
       font-weight:500;
       transition:all 0.35s;
+      cursor:pointer;
+      border:none;
     }
 
-    .btn-primary {
+    .btn-primary, .project-btn {
       background:var(--primary);
       color:white;
     }
 
-    .btn-primary:hover {
+    .btn-primary:hover, .project-btn:hover {
       background:var(--primary-dark);
       transform:translateY(-4px);
       box-shadow:0 12px 30px rgba(124,58,237,0.35);
-    }
-
-    .btn-outline {
-      border:2px solid var(--primary);
-      color:var(--primary);
-    }
-
-    .btn-outline:hover {
-      background:var(--primary);
-      color:white;
-      transform:translateY(-4px);
     }
 
     /* Sections */
@@ -171,6 +164,21 @@
       border-color:var(--primary);
     }
 
+    /* Skills icons */
+    .skill-tag {
+      background:rgba(124,58,237,0.15);
+      color:var(--accent);
+      padding:0.6rem 1.2rem;
+      border-radius:50px;
+      font-size:0.95rem;
+      border:1px solid rgba(124,58,237,0.3);
+      display:inline-flex;
+      align-items:center;
+      gap:0.6rem;
+    }
+
+    .skill-icon { font-size:1.1rem; }
+
     /* Projets */
     .projects-grid {
       display:grid;
@@ -198,25 +206,24 @@
 
     .project-btn {
       margin-top:1.5rem;
-      background:var(--primary);
-      color:white;
-      border:none;
-      padding:0.9rem 1.8rem;
-      border-radius:50px;
-      cursor:pointer;
-      font-weight:500;
-      display:inline-flex;
-      align-items:center;
-      gap:0.6rem;
-      transition:all 0.3s;
+      width:fit-content;
     }
 
-    .project-btn:hover {
-      background:var(--primary-dark);
-      transform:translateY(-3px);
+    /* Expériences & Contact & Footer (inchangés) */
+    .exp-item {
+      display:grid;
+      grid-template-columns:180px 1fr;
+      gap:2rem;
+      margin-bottom:2.5rem;
     }
 
-    /* Contact & Footer */
+    .exp-date {
+      color:var(--accent);
+      font-weight:600;
+      font-size:1.1rem;
+      text-align:right;
+    }
+
     .contact-grid {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -253,6 +260,8 @@
     @media (max-width:900px) {
       .hero-grid { grid-template-columns:1fr; text-align:center; }
       .hero-photo { margin:2rem auto; }
+      .exp-item { grid-template-columns:1fr; }
+      .exp-date { text-align:left; margin-bottom:1rem; }
     }
   </style>
 </head>
@@ -280,134 +289,241 @@
       <div class="hero-left">
         <h1>ABIR ES-SAIYDY</h1>
         <h2>Développeuse IA & Data</h2>
-        <p style="font-size:1.22rem;margin:1.8rem 0 2.5rem;max-width:620px;">
+        <p style="font-size:1.22rem; margin:1.8rem 0 2.5rem; max-width:620px;">
           Étudiante MIAGE L3 | Recherche alternance cycle ingénieur Informatique / IA<br>
           Rentrée septembre 2026 – France
         </p>
-        <div style="display:flex;gap:1.4rem;flex-wrap:wrap;">
+        <div style="display:flex; gap:1.4rem; flex-wrap:wrap;">
           <a href="https://www.linkedin.com/in/abir-es-saiydy-3b3285306/" target="_blank" class="btn btn-primary"><i class="fab fa-linkedin"></i> LinkedIn</a>
           <a href="https://github.com/Es-saiydy" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
           <a href="assets/img/cv-abir-essaiydy.pdf" download class="btn btn-outline"><i class="fas fa-file-pdf"></i> Télécharger CV</a>
         </div>
       </div>
       <div>
-        <img src="assets/img/photo.jpeg" alt="Abir Es-Saiydy" class="hero-photo">
+        <img src="assets/img/photo.jpg" alt="Abir Es-Saiydy" class="hero-photo">
       </div>
     </div>
   </div>
 </section>
 
-<!-- Profil -->
 <section id="about">
   <div class="container">
     <h2 class="section-title">Profil</h2>
     <div class="card">
-      <p style="font-size:1.08rem;max-width:900px;margin:0 auto;">
+      <p style="font-size:1.08rem; max-width:900px; margin:0 auto;">
         Étudiante en Licence 3 Informatique – parcours MIAGE à l'Université d'Orléans, titulaire d'un Bachelor en Intelligence Artificielle et Data et d'un BTS en Développement des Systèmes d'Information.
       </p>
-      <p style="font-size:1.08rem;max-width:900px;margin:1.4rem auto;">
+      <p style="font-size:1.08rem; max-width:900px; margin:1.4rem auto;">
         Je souhaite intégrer la 4ᵉ année du cycle ingénieur en informatique / IA en alternance, afin de renforcer mes compétences en développement logiciel, data et intelligence artificielle, dans un contexte professionnel.
       </p>
-      <p style="font-size:1.08rem;max-width:900px;margin:0 auto;">
+      <p style="font-size:1.08rem; max-width:900px; margin:0 auto;">
         Motivée, rigoureuse et orientée projets, je souhaite évoluer vers des métiers liés à la data, à l'IA et aux systèmes d'information, en alliant théorie et pratique en entreprise.
       </p>
     </div>
   </div>
 </section>
 
-<!-- Compétences -->
 <section id="skills" style="background:rgba(30,41,59,0.4);">
   <div class="container">
     <h2 class="section-title">Compétences</h2>
     <div class="skills-grid">
-      <!-- tes catégories de compétences ici (comme avant) -->
+
       <div class="card">
         <h3>Langages de programmation</h3>
         <div class="skill-list">
-          <span class="skill-tag">Java (POO, MVC, Java SE)</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">C</span>
-          <span class="skill-tag">VB.NET</span>
-          <span class="skill-tag">SQL / PL/SQL</span>
+          <span class="skill-tag"><i class="fab fa-java skill-icon"></i> Java (POO, MVC, Java SE)</span>
+          <span class="skill-tag"><i class="fab fa-python skill-icon"></i> Python</span>
+          <span class="skill-tag"><i class="fas fa-code skill-icon"></i> C</span>
+          <span class="skill-tag"><i class="fas fa-terminal skill-icon"></i> VB.NET</span>
+          <span class="skill-tag"><i class="fas fa-database skill-icon"></i> SQL / PL/SQL</span>
         </div>
       </div>
-      <!-- ajoute les autres catégories comme dans la version précédente -->
+
+      <div class="card">
+        <h3>Développement Web</h3>
+        <div class="skill-list">
+          <span class="skill-tag"><i class="fab fa-html5 skill-icon"></i> HTML5 / CSS3 / JavaScript</span>
+          <span class="skill-tag"><i class="fab fa-php skill-icon"></i> PHP</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Frameworks & notions</h3>
+        <div class="skill-list">
+          <span class="skill-tag"><i class="fab fa-laravel skill-icon"></i> Laravel</span>
+          <span class="skill-tag"><i class="fas fa-cogs skill-icon"></i> Symfony</span>
+          <span class="skill-tag"><i class="fab fa-python skill-icon"></i> Django</span>
+          <span class="skill-tag"><i class="fab fa-react skill-icon"></i> React / React Native</span>
+          <span class="skill-tag"><i class="fab fa-node-js skill-icon"></i> Node.js (bases)</span>
+          <span class="skill-tag"><i class="fas fa-code skill-icon"></i> Angular (bases)</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>IA & Data</h3>
+        <div class="skill-list">
+          <span class="skill-tag"><i class="fas fa-brain skill-icon"></i> Machine Learning (bases)</span>
+          <span class="skill-tag"><i class="fas fa-eye skill-icon"></i> YOLO / OpenCV</span>
+          <span class="skill-tag"><i class="fas fa-chart-bar skill-icon"></i> NumPy / Matplotlib</span>
+          <span class="skill-tag"><i class="fas fa-chart-line skill-icon"></i> Tableau / Power BI</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Bases de données & Outils</h3>
+        <div class="skill-list">
+          <span class="skill-tag"><i class="fas fa-database skill-icon"></i> MySQL / PostgreSQL / SQL Server</span>
+          <span class="skill-tag"><i class="fas fa-sitemap skill-icon"></i> UML / Merise</span>
+          <span class="skill-tag"><i class="fab fa-docker skill-icon"></i> Docker</span>
+          <span class="skill-tag"><i class="fas fa-code-branch skill-icon"></i> Git / GitHub</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Méthodes & Langues</h3>
+        <div class="skill-list">
+          <span class="skill-tag"><i class="fas fa-users-cog skill-icon"></i> Agile / Scrum</span>
+          <span class="skill-tag"><i class="fas fa-globe skill-icon"></i> Arabe : Maternelle</span>
+          <span class="skill-tag"><i class="fas fa-language skill-icon"></i> Français : courant</span>
+          <span class="skill-tag"><i class="fas fa-language skill-icon"></i> Anglais : Intermédiaire</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- Projets (avec bouton vers rapport) -->
 <section id="projects">
   <div class="container">
     <h2 class="section-title">Projets</h2>
     <div class="projects-grid">
 
-      <!-- WildLens -->
       <div class="card">
         <img src="assets/img/wildlens.jpg" alt="WildLens" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
         <h3 class="project-title">WildLens – Identification d'empreintes animales</h3>
-        <p>Application mobile d'identification d'empreintes animales via IA (React Native + Spring Boot). Modèle YOLO...</p>
+        <p>Application mobile React Native + Spring Boot avec modèle YOLOv8 pour détecter les espèces via photo. API Python dockérisée, stockage PostgreSQL avec géolocalisation.</p>
         <div class="project-tech">
           <span class="tech-tag">React Native</span>
           <span class="tech-tag">Spring Boot</span>
           <span class="tech-tag">YOLO</span>
           <span class="tech-tag">Docker</span>
         </div>
-        <button class="project-btn" onclick="window.open('wildlens-report.html', '_blank')">
-          <i class="fas fa-file-alt"></i> Voir le rapport complet
-        </button>
+        <a href="https://github.com/Es-saiydy/MSPR-Projet-IA-WildLens-" target="_blank" class="project-btn">
+          <i class="fas fa-eye"></i> Voir le projet
+        </a>
       </div>
 
-      <!-- Gestion Opticien -->
       <div class="card">
         <img src="assets/img/opticien.jpg" alt="Opticien" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
-        <h3 class="project-title">Gestion d'un opticien</h3>
-        <p>Application desktop VB.NET + site web PHP pour gestion stocks, ventes, fournisseurs...</p>
+        <h3 class="project-title">Gestion d'un opticien – Application + Site web (PFE)</h3>
+        <p>Application desktop VB.NET + site web PHP pour gestion complète (stocks, ventes, clients, fournisseurs, commandes en ligne). Conception UML/Merise.</p>
         <div class="project-tech">
           <span class="tech-tag">VB.NET</span>
           <span class="tech-tag">PHP</span>
           <span class="tech-tag">MySQL</span>
         </div>
-        <button class="project-btn" onclick="window.open('opticien-report.html', '_blank')">
-          <i class="fas fa-file-alt"></i> Voir le rapport complet
-        </button>
+        <a href="https://github.com/Es-saiydy/Gestion-d-opticien" target="_blank" class="project-btn">
+          <i class="fas fa-eye"></i> Voir le projet
+        </a>
       </div>
 
-      <!-- Faculté Médecine -->
       <div class="card">
         <img src="assets/img/medecine-oujda.jpg" alt="Logistique Médecine" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
         <h3 class="project-title">Gestion Logistique Faculté Médecine Oujda</h3>
-        <p>Application web Laravel pour gestion stocks, livraisons, fournisseurs...</p>
+        <p>Application web Laravel + PHP pour gestion stocks, livraisons, fournisseurs. Conception UML.</p>
         <div class="project-tech">
           <span class="tech-tag">Laravel</span>
           <span class="tech-tag">PHP</span>
           <span class="tech-tag">MySQL</span>
         </div>
-        <button class="project-btn" onclick="window.open('medecine-report.html', '_blank')">
-          <i class="fas fa-file-alt"></i> Voir le rapport complet
-        </button>
+        <a href="https://github.com/Es-saiydy/la-Facult-de-M-decine-d-Oujda" target="_blank" class="project-btn">
+          <i class="fas fa-eye"></i> Voir le projet
+        </a>
       </div>
 
-      <!-- Stage Alhambra -->
       <div class="card">
         <img src="assets/img/projet_stage.png" alt="Stage Alhambra" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
-        <h3 class="project-title">Gestion Employés – Stage Alhambra 2025</h3>
-        <p>Application de gestion employés (horaires, tâches, profils)...</p>
+        <h3 class="project-title">Gestion Employés – Stage Alhambra Design 2025</h3>
+        <p>Application de gestion des employés (horaires, tâches, profils). Analyse, modélisation, base de données, rapports Power BI.</p>
         <div class="project-tech">
           <span class="tech-tag">Java</span>
           <span class="tech-tag">SQL</span>
           <span class="tech-tag">Power BI</span>
         </div>
-        <button class="project-btn" onclick="window.open('stage-report.html', '_blank')">
-          <i class="fas fa-file-alt"></i> Voir le rapport complet
-        </button>
+        <a href="https://github.com/Es-saiydy/project_stage" target="_blank" class="project-btn">
+          <i class="fas fa-eye"></i> Voir le projet
+        </a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- le reste : expériences, contact, footer comme avant -->
+<!-- Expériences (inchangée) -->
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">Expériences professionnelles</h2>
+
+    <div class="exp-item">
+      <div class="exp-date">Mars – Juin 2025</div>
+      <div class="exp-content card">
+        <h3>Alhambra Design</h3>
+        <p>Création d'une application de gestion des employés (horaires, tâches, profils). Analyse et modélisation complète, développement base de données, analyse des données pour rapports et insights.</p>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Mai – Juin 2024</div>
+      <div class="exp-content card">
+        <h3>Faculté de Médecine – Oujda</h3>
+        <p>Développement d'une application web de gestion de service logistique. Analyse et conception UML. Développement : Laravel, HTML/CSS, PHP (stocks, livraisons, fournisseurs).</p>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Juillet 2023</div>
+      <div class="exp-content card">
+        <h3>Alhambra Design</h3>
+        <p>Développement d'une application desktop de gestion des salariés. Analyse et conception Merise. Développement VB.NET (salaires, formations, congés).</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact (inchangé) -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-grid">
+
+      <div class="contact-card card">
+        <div class="contact-icon"><i class="fas fa-phone-volume"></i></div>
+        <h3>Téléphone</h3>
+        <p><a href="tel:+33669364047">+33 6 69 36 40 47</a></p>
+      </div>
+
+      <div class="contact-card card">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <h3>Email</h3>
+        <p><a href="mailto:abiressaiydyl@gmail.com">abiressaiydyl@gmail.com</a></p>
+      </div>
+
+      <div class="contact-card card">
+        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h3>Localisation</h3>
+        <p>Orléans, France</p>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:4rem;">
+      <a href="mailto:abiressaiydyl@gmail.com" class="btn btn-primary" style="font-size:1.3rem; padding:1.1rem 3rem;">
+        <i class="fas fa-paper-plane"></i> Me contacter directement
+      </a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="container">
