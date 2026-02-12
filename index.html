@@ -160,26 +160,6 @@
       transform: translateY(-4px);
     }
 
-    .project-btn {
-      margin-top: 1.5rem;
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 0.9rem 1.8rem;
-      border-radius: 50px;
-      cursor: pointer;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      transition: all 0.3s;
-    }
-
-    .project-btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-    }
-
     /* Sections */
     section {
       padding: 120px 0;
@@ -209,7 +189,7 @@
       border-color: var(--primary);
     }
 
-    /* Compétences avec icônes */
+    /* Compétences */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -271,6 +251,44 @@
       border-radius: 50px;
       font-size: 0.88rem;
       border: 1px solid rgba(167, 139, 250, 0.3);
+    }
+
+    .project-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-project, .btn-github {
+      padding: 0.8rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-project {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-project:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .btn-github {
+      background: #24292e;
+      color: white;
+    }
+
+    .btn-github:hover {
+      background: #1b1f23;
+      transform: translateY(-3px);
     }
 
     /* Expériences */
@@ -343,6 +361,7 @@
       .hero-photo { margin: 2rem auto; }
       .exp-item { grid-template-columns: 1fr; }
       .exp-date { text-align: left; margin-bottom: 1rem; }
+      .project-buttons { flex-direction: column; }
     }
   </style>
 </head>
@@ -412,62 +431,62 @@
       <div class="card">
         <h3>Langages de programmation</h3>
         <div class="skill-list">
-          <span class="skill-tag"><i class="fab fa-java skill-icon"></i>Java (POO, MVC, Java SE)</span>
-          <span class="skill-tag"><i class="fab fa-python skill-icon"></i>Python</span>
-          <span class="skill-tag"><i class="fas fa-code skill-icon"></i>C</span>
-          <span class="skill-tag"><i class="fas fa-terminal skill-icon"></i>VB.NET</span>
-          <span class="skill-tag"><i class="fas fa-database skill-icon"></i>SQL / PL/SQL</span>
+          <span class="skill-tag"><i class="fab fa-java skill-icon"></i> Java (POO, MVC, Java SE)</span>
+          <span class="skill-tag"><i class="fab fa-python skill-icon"></i> Python</span>
+          <span class="skill-tag"><i class="fas fa-code skill-icon"></i> C</span>
+          <span class="skill-tag"><i class="fas fa-terminal skill-icon"></i> VB.NET</span>
+          <span class="skill-tag"><i class="fas fa-database skill-icon"></i> SQL / PL/SQL</span>
         </div>
       </div>
 
       <div class="card">
         <h3>Développement Web</h3>
         <div class="skill-list">
-          <span class="skill-tag"><i class="fab fa-html5 skill-icon"></i>HTML5 / CSS3 / JavaScript</span>
-          <span class="skill-tag"><i class="fab fa-php skill-icon"></i>PHP</span>
+          <span class="skill-tag"><i class="fab fa-html5 skill-icon"></i> HTML5 / CSS3 / JavaScript</span>
+          <span class="skill-tag"><i class="fab fa-php skill-icon"></i> PHP</span>
         </div>
       </div>
 
       <div class="card">
         <h3>Frameworks & notions</h3>
         <div class="skill-list">
-          <span class="skill-tag"><i class="fab fa-laravel skill-icon"></i>Laravel</span>
-          <span class="skill-tag"><i class="fas fa-cogs skill-icon"></i>Symfony</span>
-          <span class="skill-tag"><i class="fab fa-python skill-icon"></i>Django</span>
-          <span class="skill-tag"><i class="fab fa-react skill-icon"></i>React / React Native</span>
-          <span class="skill-tag"><i class="fab fa-node-js skill-icon"></i>Node.js (bases)</span>
-          <span class="skill-tag"><i class="fab fa-angular skill-icon"></i>Angular (bases)</span>
+          <span class="skill-tag"><i class="fab fa-laravel skill-icon"></i> Laravel</span>
+          <span class="skill-tag"><i class="fas fa-cogs skill-icon"></i> Symfony</span>
+          <span class="skill-tag"><i class="fab fa-python skill-icon"></i> Django</span>
+          <span class="skill-tag"><i class="fab fa-react skill-icon"></i> React / React Native</span>
+          <span class="skill-tag"><i class="fab fa-node-js skill-icon"></i> Node.js (bases)</span>
+          <span class="skill-tag"><i class="fab fa-angular skill-icon"></i> Angular (bases)</span>
         </div>
       </div>
 
       <div class="card">
         <h3>Intelligence Artificielle & Data</h3>
         <div class="skill-list">
-          <span class="skill-tag"><i class="fas fa-brain skill-icon"></i>Machine Learning (bases)</span>
-          <span class="skill-tag"><i class="fas fa-eye skill-icon"></i>YOLO / OpenCV</span>
-          <span class="skill-tag"><i class="fas fa-chart-bar skill-icon"></i>NumPy / Matplotlib</span>
-          <span class="skill-tag"><i class="fas fa-chart-line skill-icon"></i>Tableau / Power BI</span>
+          <span class="skill-tag"><i class="fas fa-brain skill-icon"></i> Machine Learning (bases)</span>
+          <span class="skill-tag"><i class="fas fa-eye skill-icon"></i> YOLO / OpenCV</span>
+          <span class="skill-tag"><i class="fas fa-chart-bar skill-icon"></i> NumPy / Matplotlib</span>
+          <span class="skill-tag"><i class="fas fa-chart-line skill-icon"></i> Tableau / Power BI</span>
         </div>
       </div>
 
       <div class="card">
         <h3>Bases de données & Outils</h3>
         <div class="skill-list">
-          <span class="skill-tag"><i class="fas fa-database skill-icon"></i>MySQL / PostgreSQL / SQL Server</span>
-          <span class="skill-tag"><i class="fas fa-sitemap skill-icon"></i>UML / Merise</span>
-          <span class="skill-tag"><i class="fab fa-docker skill-icon"></i>Docker</span>
-          <span class="skill-tag"><i class="fas fa-tools skill-icon"></i>Talend / Orange Data Mining</span>
-          <span class="skill-tag"><i class="fab fa-git-alt skill-icon"></i>Git / GitHub</span>
+          <span class="skill-tag"><i class="fas fa-database skill-icon"></i> MySQL / PostgreSQL / SQL Server</span>
+          <span class="skill-tag"><i class="fas fa-sitemap skill-icon"></i> UML / Merise</span>
+          <span class="skill-tag"><i class="fab fa-docker skill-icon"></i> Docker</span>
+          <span class="skill-tag"><i class="fas fa-tools skill-icon"></i> Talend / Orange Data Mining</span>
+          <span class="skill-tag"><i class="fab fa-git-alt skill-icon"></i> Git / GitHub</span>
         </div>
       </div>
 
       <div class="card">
         <h3>Méthodes & Langues</h3>
         <div class="skill-list">
-          <span class="skill-tag"><i class="fas fa-users-cog skill-icon"></i>Agile / Scrum</span>
-          <span class="skill-tag"><i class="fas fa-globe skill-icon"></i>Arabe : Maternelle</span>
-          <span class="skill-tag"><i class="fas fa-language skill-icon"></i>Français : courant</span>
-          <span class="skill-tag"><i class="fas fa-language skill-icon"></i>Anglais : Intermédiaire</span>
+          <span class="skill-tag"><i class="fas fa-users-cog skill-icon"></i> Agile / Scrum</span>
+          <span class="skill-tag"><i class="fas fa-globe skill-icon"></i> Arabe : Maternelle</span>
+          <span class="skill-tag"><i class="fas fa-language skill-icon"></i> Français : courant</span>
+          <span class="skill-tag"><i class="fas fa-language skill-icon"></i> Anglais : Intermédiaire</span>
         </div>
       </div>
 
@@ -480,61 +499,86 @@
     <h2 class="section-title">Projets</h2>
     <div class="projects-grid">
 
+      <!-- WildLens -->
       <div class="card">
-        <img src="assets/img/wildlens.jpg" alt="WildLens" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
         <h3 class="project-title">WildLens – Identification d'empreintes animales</h3>
-        <p>Application mobile React Native + Spring Boot avec modèle YOLOv8 pour détecter les espèces via photo. API Python dockérisée, stockage PostgreSQL avec géolocalisation.</p>
+        <p>Création d'une application mobile d'identification d'empreintes animales (React Native + Spring Boot). Modèle YOLO pour la classification d'images. API Python conteneurisée.</p>
         <div class="project-tech">
           <span class="tech-tag">React Native</span>
           <span class="tech-tag">Spring Boot</span>
+          <span class="tech-tag">Python</span>
           <span class="tech-tag">YOLO</span>
           <span class="tech-tag">Docker</span>
+          <span class="tech-tag">PostgreSQL</span>
         </div>
-        <a href="https://github.com/Es-saiydy/MSPR-Projet-IA-WildLens-" target="_blank" class="project-btn">
-          <i class="fas fa-eye"></i> Voir le projet
-        </a>
+        <div class="project-buttons">
+          <a href="wildlens.html" class="btn-project">
+            <i class="fas fa-eye"></i> Voir projet
+          </a>
+          <a href="https://github.com/Es-saiydy/MSPR-Projet-IA-WildLens-" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
       </div>
 
+      <!-- Gestion Opticien -->
       <div class="card">
-        <img src="assets/img/opticien.jpg" alt="Opticien" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
-        <h3 class="project-title">Gestion d'un opticien – Application + Site web (PFE)</h3>
-        <p>Développement d'une application et d'un site web pour la gestion d'un opticien. Analyse et Conception UML/Merise. VB.NET (partie administrative), PHP + JavaScript + HTML/CSS (site client).</p>
+        <h3 class="project-title">Gestion d'un opticien – PFE</h3>
+        <p>Application desktop VB.NET + site web PHP pour gestion clients, commandes en ligne, stocks et ventes.</p>
         <div class="project-tech">
           <span class="tech-tag">VB.NET</span>
           <span class="tech-tag">PHP</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">HTML/CSS</span>
           <span class="tech-tag">MySQL</span>
         </div>
-        <a href="https://github.com/Es-saiydy/Gestion-d-opticien" target="_blank" class="project-btn">
-          <i class="fas fa-eye"></i> Voir le projet
-        </a>
+        <div class="project-buttons">
+          <a href="opticien.html" class="btn-project">
+            <i class="fas fa-eye"></i> Voir projet
+          </a>
+          <a href="https://github.com/Es-saiydy/Gestion-d-opticien" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
       </div>
 
+      <!-- Gestion logistique Médecine -->
       <div class="card">
-        <img src="assets/img/medecine-oujda.jpg" alt="Logistique Médecine" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
         <h3 class="project-title">Gestion logistique – Faculté de Médecine Oujda</h3>
-        <p>Application web Laravel + PHP pour gestion stocks, livraisons, fournisseurs. Conception UML.</p>
+        <p>Application web Laravel pour gestion des stocks, fournisseurs et livraisons.</p>
         <div class="project-tech">
           <span class="tech-tag">Laravel</span>
           <span class="tech-tag">PHP</span>
+          <span class="tech-tag">HTML/CSS</span>
           <span class="tech-tag">MySQL</span>
         </div>
-        <a href="https://github.com/Es-saiydy/la-Facult-de-M-decine-d-Oujda" target="_blank" class="project-btn">
-          <i class="fas fa-eye"></i> Voir le projet
-        </a>
+        <div class="project-buttons">
+          <a href="medecine-oujda.html" class="btn-project">
+            <i class="fas fa-eye"></i> Voir projet
+          </a>
+          <a href="https://github.com/Es-saiydy/la-Facult-de-M-decine-d-Oujda" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
       </div>
 
+      <!-- Stage Alhambra -->
       <div class="card">
-        <img src="assets/img/projet_stage.png" alt="Stage Alhambra" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;">
-        <h3 class="project-title">Gestion des employés – Stage Alhambra Design 2025</h3>
-        <p>Application de gestion des employés (horaires, tâches, profils). Analyse, modélisation, base de données, rapports Power BI.</p>
+        <h3 class="project-title">Gestion des employés – Stage 2025</h3>
+        <p>Application de gestion employés : horaires, tâches, profils, base de données et rapports Power BI.</p>
         <div class="project-tech">
           <span class="tech-tag">Java</span>
           <span class="tech-tag">SQL</span>
           <span class="tech-tag">Power BI</span>
         </div>
-        <a href="https://github.com/Es-saiydy/project_stage" target="_blank" class="project-btn">
-          <i class="fas fa-eye"></i> Voir le projet
-        </a>
+        <div class="project-buttons">
+          <a href="stage-alhambra.html" class="btn-project">
+            <i class="fas fa-eye"></i> Voir projet
+          </a>
+          <a href="https://github.com/Es-saiydy/project_stage" target="_blank" class="btn-github">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
       </div>
 
     </div>
