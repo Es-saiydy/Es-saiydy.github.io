@@ -68,6 +68,13 @@
       -webkit-text-fill-color: transparent;
     }
 
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: var(--accent);
+      cursor: pointer;
+    }
+
     .nav-links {
       display: flex;
       gap: 2.2rem;
@@ -356,18 +363,32 @@
       transform: translateY(-5px);
     }
 
-    /* === RESPONSIVE MOBILE - Améliorations majeures === */
+    /* === RESPONSIVE MOBILE AVEC MENU HAMBURGER === */
     @media (max-width: 900px) {
-      nav {
-        flex-direction: column;
-        height: auto;
-        padding: 1rem 0;
+      .menu-toggle {
+        display: block;
       }
 
       .nav-links {
+        display: none;
         flex-direction: column;
-        gap: 1rem;
-        margin-top: 1rem;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.98);
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        text-align: center;
+        padding: 1.2rem 0;
+        font-size: 1.1rem;
       }
 
       .hero-grid {
@@ -376,9 +397,9 @@
       }
 
       .hero-photo {
-        margin: 2rem auto;
         width: 220px;
         height: 220px;
+        margin: 2rem auto;
       }
 
       .hero-left h1 {
@@ -411,6 +432,7 @@
         width: 100%;
         justify-content: center;
         padding: 1rem 1.5rem;
+        font-size: 1.1rem;
       }
 
       .card {
@@ -473,7 +495,8 @@
   <div class="container">
     <nav>
       <div class="logo">Abir Es-Saiydy</div>
-      <ul class="nav-links">
+      <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#hero">Accueil</a></li>
         <li><a href="#about">Profil</a></li>
         <li><a href="#skills">Compétences</a></li>
@@ -495,7 +518,7 @@
           Étudiante MIAGE L3 | Recherche alternance cycle ingénieur Informatique / IA<br>
           Rentrée septembre 2026 – France
         </p>
-        <div style="display:flex; gap:1.4rem; flex-wrap:wrap;">
+        <div style="display:flex; gap:1.4rem; flex-wrap:wrap; justify-content:center;">
           <a href="https://www.linkedin.com/in/abir-es-saiydy-3b3285306/" target="_blank" class="btn btn-primary"><i class="fab fa-linkedin"></i> LinkedIn</a>
           <a href="https://github.com/Es-saiydy" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
           <a href="assets/img/cv-abir-essaiydy.pdf" download class="btn btn-outline"><i class="fas fa-file-pdf"></i> Télécharger CV</a>
@@ -513,7 +536,7 @@
     <h2 class="section-title">Profil</h2>
     <div class="card">
       <p style="font-size:1.08rem; max-width:900px; margin:0 auto;">
-        Étudiante en Licence 3 Informatique – parcours MIAGE à l’Université d’Orléans, titulaire d'un Bachelor en Intelligence Artificielle et Data et d'un BTS en Développement des Systèmes d'Information.
+        Étudiante en Licence 3 Informatique – parcours MIAGE à l'Université d'Orléans, titulaire d'un Bachelor en Intelligence Artificielle et Data et d'un BTS en Développement des Systèmes d'Information.
       </p>
       <p style="font-size:1.08rem; max-width:900px; margin:1.4rem auto;">
         Je souhaite intégrer la 4ᵉ année du cycle ingénieur en informatique / IA en alternance, afin de renforcer mes compétences en développement logiciel, data et intelligence artificielle, dans un contexte professionnel.
@@ -755,6 +778,23 @@
     </div>
   </div>
 </footer>
+
+<!-- Script pour le menu hamburger -->
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Fermer le menu si on clique sur un lien
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+</script>
 
 </body>
 </html>
