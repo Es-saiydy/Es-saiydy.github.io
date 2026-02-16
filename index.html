@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ES-SAIYDY abir – Développeuse IA & Data</title>
+  <title>Abir Es-Saiydy – Développeuse IA & Data</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -356,12 +356,114 @@
       transform: translateY(-5px);
     }
 
+    /* === RESPONSIVE MOBILE - Améliorations majeures === */
     @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; text-align: center; }
-      .hero-photo { margin: 2rem auto; }
-      .exp-item { grid-template-columns: 1fr; }
-      .exp-date { text-align: left; margin-bottom: 1rem; }
-      .project-buttons { flex-direction: column; }
+      nav {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem 0;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-photo {
+        margin: 2rem auto;
+        width: 220px;
+        height: 220px;
+      }
+
+      .hero-left h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero-left h2 {
+        font-size: 1.4rem;
+      }
+
+      .skills-grid, .projects-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-item {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-date {
+        text-align: left;
+        margin-bottom: 0.8rem;
+      }
+
+      .project-buttons {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .btn, .btn-project, .btn-github {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+      }
+
+      .card {
+        padding: 1.5rem;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      h2.section-title {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      .hero-left h1 {
+        font-size: 2.4rem;
+      }
+
+      .hero-left h2 {
+        font-size: 1.3rem;
+      }
+
+      .hero-photo {
+        width: 180px;
+        height: 180px;
+      }
+
+      .skill-tag, .tech-tag {
+        font-size: 0.85rem;
+        padding: 0.45rem 0.9rem;
+      }
+
+      .project-title {
+        font-size: 1.3rem;
+      }
+
+      .exp-content h3 {
+        font-size: 1.2rem;
+      }
+
+      .contact-card h3 {
+        font-size: 1.2rem;
+      }
+
+      .contact-icon {
+        font-size: 2.4rem;
+      }
     }
   </style>
 </head>
@@ -370,7 +472,7 @@
 <header>
   <div class="container">
     <nav>
-      <div class="logo">Portfolio</div>
+      <div class="logo">Abir Es-Saiydy</div>
       <ul class="nav-links">
         <li><a href="#hero">Accueil</a></li>
         <li><a href="#about">Profil</a></li>
@@ -387,7 +489,7 @@
   <div class="container">
     <div class="hero-grid">
       <div class="hero-left">
-        <h1>ES-SAIYDY Abir</h1>
+        <h1>ABIR ES-SAIYDY</h1>
         <h2>Développeuse IA & Data</h2>
         <p style="font-size:1.22rem; margin:1.8rem 0 2.5rem; max-width:620px;">
           Étudiante MIAGE L3 | Recherche alternance cycle ingénieur Informatique / IA<br>
@@ -411,10 +513,10 @@
     <h2 class="section-title">Profil</h2>
     <div class="card">
       <p style="font-size:1.08rem; max-width:900px; margin:0 auto;">
-        Étudiante en Licence 3 Informatique – parcours MIAGE à l'Université d'Orléans, titulaire d'un Bachelor en Intelligence Artificielle et Data et d'un BTS en Développement des Systèmes d'Information.
+        Étudiante en Licence 3 Informatique – parcours MIAGE à l’Université d’Orléans, titulaire d'un Bachelor en Intelligence Artificielle et Data et d'un BTS en Développement des Systèmes d'Information.
       </p>
       <p style="font-size:1.08rem; max-width:900px; margin:1.4rem auto;">
-        Je souhaite intégrer la 1ᵉ année du cycle ingénieur en informatique / IA en alternance, afin de renforcer mes compétences en développement logiciel, data et intelligence artificielle, dans un contexte professionnel.
+        Je souhaite intégrer la 4ᵉ année du cycle ingénieur en informatique / IA en alternance, afin de renforcer mes compétences en développement logiciel, data et intelligence artificielle, dans un contexte professionnel.
       </p>
       <p style="font-size:1.08rem; max-width:900px; margin:0 auto;">
         Motivée, rigoureuse et orientée projets, je souhaite évoluer vers des métiers liés à la data, à l'IA et aux systèmes d'information, en alliant théorie et pratique en entreprise.
@@ -499,7 +601,6 @@
     <h2 class="section-title">Projets</h2>
     <div class="projects-grid">
 
-      <!-- WildLens -->
       <div class="card">
         <h3 class="project-title">WildLens – Identification d'empreintes animales</h3>
         <p>Création d'une application mobile d'identification d'empreintes animales (React Native + Spring Boot). Modèle YOLO pour la classification d'images. API Python conteneurisée.</p>
@@ -521,10 +622,9 @@
         </div>
       </div>
 
-      <!-- Gestion Opticien -->
       <div class="card">
-        <h3 class="project-title">Gestion d'un opticien – PFE</h3>
-        <p>Application desktop VB.NET + site web PHP pour gestion clients, commandes en ligne, stocks et ventes.</p>
+        <h3 class="project-title">Gestion d'un opticien – Application + Site web (PFE)</h3>
+        <p>Développement d'une application et d'un site web pour la gestion d'un opticien. Analyse et Conception UML/Merise. VB.NET (partie administrative), PHP + JavaScript + HTML/CSS (site client : commandes en ligne, gestion clients).</p>
         <div class="project-tech">
           <span class="tech-tag">VB.NET</span>
           <span class="tech-tag">PHP</span>
@@ -542,10 +642,9 @@
         </div>
       </div>
 
-      <!-- Gestion logistique Médecine -->
       <div class="card">
         <h3 class="project-title">Gestion logistique – Faculté de Médecine Oujda</h3>
-        <p>Application web Laravel pour gestion des stocks, fournisseurs et livraisons.</p>
+        <p>Application web de gestion de service logistique (stocks, livraisons, fournisseurs). Analyse et conception UML. Développement Laravel, PHP, HTML/CSS.</p>
         <div class="project-tech">
           <span class="tech-tag">Laravel</span>
           <span class="tech-tag">PHP</span>
@@ -562,17 +661,16 @@
         </div>
       </div>
 
-      <!-- Stage Alhambra -->
       <div class="card">
-        <h3 class="project-title">Gestion des employés – Stage 2025</h3>
-        <p>Application de gestion employés : horaires, tâches, profils, base de données et rapports Power BI.</p>
+        <h3 class="project-title">Gestion des employés – Stage Alhambra Design 2025</h3>
+        <p>Création d'une application de gestion des employés (horaires, tâches, profils). Analyse et modélisation complète, développement base de données, rapports et insights.</p>
         <div class="project-tech">
           <span class="tech-tag">Java</span>
           <span class="tech-tag">SQL</span>
           <span class="tech-tag">Power BI</span>
         </div>
         <div class="project-buttons">
-          <a href="stage-alhambra.html" class="btn-project">
+          <a href="stage-report.html" class="btn-project">
             <i class="fas fa-eye"></i> Voir projet
           </a>
           <a href="https://github.com/Es-saiydy/project_stage" target="_blank" class="btn-github">

@@ -12,42 +12,176 @@
     .back:hover { text-decoration:underline; }
     img { max-width:100%; border-radius:12px; margin:1.5rem 0; box-shadow:0 10px 30px rgba(0,0,0,0.5); }
     .section { margin-bottom:3rem; background:#1e293b; padding:2rem; border-radius:12px; border:1px solid #334155; }
+    .screenshot-item { margin-bottom:2rem; }
+    .screenshot-caption { font-size:0.95rem; color:#94a3b8; text-align:center; margin-top:0.5rem; }
+    .download-btn { display:inline-flex; align-items:center; gap:0.7rem; padding:0.9rem 2.2rem; border-radius:50px; text-decoration:none; font-weight:500; transition:all 0.35s; background:#7c3aed; color:white; margin:1rem 1rem 0 0; }
+    .download-btn:hover { background:#6d28d9; transform:translateY(-4px); box-shadow:0 12px 30px rgba(124,58,237,0.35); }
   </style>
 </head>
 <body>
 
   <a href="index.html" class="back"><i class="fas fa-arrow-left"></i> Retour au portfolio</a>
 
-  <h1>WildLens – Identification d'empreintes animales</h1>
+  <h1>WildLens – Développement d'un modèle prédictif et mise en production d'une solution I.A</h1>
 
   <div class="section">
-    <h2>Objectif du projet</h2>
-    <p>Créer une application mobile permettant d'identifier des espèces animales à partir de photos d'empreintes, en utilisant un modèle de vision par ordinateur (YOLOv8).</p>
+    <h2>Introduction</h2>
+    <p>Ce projet, réalisé dans le cadre de la certification Développeur en Intelligence Artificielle et Data Science (RNCP 36581), consiste à développer un modèle prédictif pour une solution I.A et à la mettre en production. Le projet a été mené en équipe par BOUKHERCHOUFA Yanis, ES-SAIYDY Abir et OUKOUKES Nour El Houda, pour la promotion 2024/2025.</p>
+    <p>Le contexte général est de créer une application mobile permettant l'identification d'empreintes animales à partir de photos, en utilisant des technologies d'IA comme YOLOv8. Le projet est divisé en deux blocs de compétences : E62 (développement du modèle) et E61 (mise en production).</p>
+    <p>Objectif principal : Développer un modèle d'apprentissage répondant au besoin d'une solution IA à partir des éléments de contextes fournis, et le déployer dans une application mobile.</p>
   </div>
 
   <div class="section">
-    <h2>Technologies utilisées</h2>
-    <ul>
-      <li>Front-end mobile : React Native</li>
-      <li>Back-end : Spring Boot</li>
-      <li>Modèle IA : YOLOv8 + OpenCV</li>
-      <li>API Python conteneurisée : Docker</li>
-      <li>Base de données : PostgreSQL (géolocalisation, date, espèce, photo)</li>
-      <li>Git / GitHub pour le versionning</li>
-    </ul>
+    <h2>Étape 1 : Contexte général et objectif du projet</h2>
+    <p>Le projet vise à produire et maintenir une solution I.A pour identifier les empreintes animales via une application mobile. Cela inclut l'analyse des données, le développement du modèle, la conception de l'architecture, l'intégration, les tests et le déploiement. Contraintes : périmètre limité aux éléments fournis, environnement technique avec React Native, Spring Boot, Python, YOLOv8, Docker et PostgreSQL.</p>
+    <p>Technologies principales : React Native (front-end), Spring Boot (back-end), YOLOv8 (modèle IA), Docker (conteneurisation), PostgreSQL (base de données).</p>
+    <div class="screenshot-item">
+      <img src="assets/img/page1-tr62.jpg" alt="Couverture du rapport E62">
+      <div class="screenshot-caption">Couverture du rapport E62 : Développement du modèle prédictif.</div>
+    </div>
+    <div class="screenshot-item">
+      <img src="assets/img/page1-trpe623.jpg" alt="Couverture du rapport E61">
+      <div class="screenshot-caption">Couverture du rapport E61 : Mise en production de la solution I.A.</div>
+    </div>
   </div>
 
   <div class="section">
-    <h2>Captures d'écran</h2>
-    <!-- ajoute ici tes screenshots supplémentaires si tu en as -->
-    <img src="assets/img/wildlens.jpg" alt="Capture 1">
-    <img src="assets/img/wildlens-2.jpg" alt="Capture 2">
-    <p style="text-align:center;color:#94a3b8;">(Ajoute tes vraies captures dans assets/img/)</p>
+    <h2>Étape 2 : Analyse du besoin</h2>
+    <p>Contexte fonctionnel : L'application doit permettre la capture de photos d'empreintes, leur identification via IA, et le stockage des résultats avec géolocalisation. Objectifs fonctionnels : authentification, capture photo, identification espèce, stockage données. Objectifs non fonctionnels : précision élevée, temps de réponse rapide, scalabilité. Contraintes techniques : utilisation de YOLOv8, Docker pour conteneurisation, intégration mobile/back-end.</p>
+    <p>Technologies : Analyse des datasets avec Python (NumPy, Pandas), data augmentation pour améliorer la robustesse du modèle.</p>
+    <div class="screenshot-item">
+      <img src="assets/img/page2-tr62.jpg" alt="Table des matières E62">
+      <div class="screenshot-caption">Table des matières du rapport E62 : Structure du développement du modèle.</div>
+    </div>
+    <div class="screenshot-item">
+      <img src="assets/img/page2-trpe623.jpg" alt="Table des matières E61">
+      <div class="screenshot-caption">Table des matières du rapport E61 : Structure de la mise en production.</div>
+    </div>
   </div>
 
   <div class="section">
-    <h2>Résultats & Apprentissages</h2>
-    <p>Le modèle atteint une précision élevée sur les données labellisées. Projet réalisé en équipe, avec conteneurisation complète pour déploiement facile. Apprentissage clé : intégration IA dans une app mobile réelle.</p>
+    <h2>Étape 3 : Analyse et préparation des données</h2>
+    <p>Description du dataset : Images d'empreintes animales, nettoyées et augmentées. Préparation : nettoyage CSV (suppression doublons, traitement valeurs manquantes), nettoyage images (vérification formats, suppression corrompues), redimensionnement images à 640x640 pour YOLOv8, data augmentation (rotation, flip, brightness).</p>
+    <p>Technologies : Python avec libraries OpenCV, Pillow pour traitement images, Pandas pour CSV.</p>
+    <div class="screenshot-item">
+      <img src="assets/img/page3-tr62.jpg" alt="Analyse des données">
+      <div class="screenshot-caption">Analyse des données : Description et exploration du dataset.</div>
+    </div>
+    <div class="screenshot-item">
+      <img src="assets/img/page4-tr62.jpg" alt="Préparation des données">
+      <div class="screenshot-caption">Préparation des données : Nettoyage CSV et images, redimensionnement.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Étape 4 : Développement du modèle</h2>
+    <p>Choix des métriques : Accuracy, Precision, Recall, F1-Score. Architectures testées : MobileNetV2, Random Forest + OpenCV, YOLOv8, CNN. Choix final : YOLOv8 pour sa précision en détection d'objets. Entraînement : Data augmentation, hyperparamètres optimisés.</p>
+    <p>Technologies : YOLOv8, Ultralytics, OpenCV, TensorFlow/Keras pour CNN.</p>
+    <div class="screenshot-item">
+      <img src="assets/img/page9-tr62.jpg" alt="Choix des métriques">
+      <div class="screenshot-caption">Choix des métriques d'évaluation du modèle.</div>
+    </div>
+    <div class="screenshot-item">
+      <img src="assets/img/page11-tr62.jpg" alt="Architecture MobileNetV2">
+      <div class="screenshot-caption">Architecture MobileNetV2 testée.</div>
+    </div>
+    <div class="screenshot-item">
+      <img src="assets/img/page14-tr62.jpg" alt="Random Forest + OpenCV">
+      <div class="screenshot-caption">Approche Random Forest avec features OpenCV.</div>
+    </div>
+    <div class="screenshot-item">
+      <img src="assets/img/page18-tr62.jpg" alt="YOLOv8">
+      <div class="screenshot-caption">Modèle YOLOv8 choisi, avec entraînement.</div>
+    </div>
+    <div class="screenshot-item">
+      <img src="assets/img/page23-tr62.jpg" alt="CNN">
+      <div class="screenshot-caption">Convolutional Neural Network (CNN) testé.</div>
+    </div>
+    <div class="screenshot-item">
+      <img src="assets/img/page27-tr62.jpg" alt="Choix final du modèle">
+      <div class="screenshot-caption">Choix final du modèle : YOLOv8.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Étape 5 : Conception et architecture</h2>
+    <p>Choix d'architecture : Application mobile (React Native), back-end (Spring Boot), API Flask pour IA, conteneurisation Docker, base de données PostgreSQL. Modélisation BDD : Tables pour empreintes, espèces, utilisateurs, géolocalisation. Conception UI : Interfaces simples et intuitives pour capture photo et résultats.</p>
+    <p>Technologies : React Native, Spring Boot, Flask, Docker, PostgreSQL.</p>
+    <div class="screenshot-item">
+      <img src="assets/img/page6-trpe623.jpg" alt="Choix d'architecture">
+      <div class="screenshot-caption">Choix d'architecture globale de la solution.</div>
+    </div>
+    <div class="screenshot-item">
+      <img src="assets/img/page9-trpe623.jpg" alt="Choix des technologies">
+      <div class="screenshot-caption">Choix des technologies pour front, back et IA.</div>
+    </div>
+    <div class="screenshot-item">
+      <img src="assets/img/page12-trpe623.jpg" alt="Modélisation BDD">
+      <div class="screenshot-caption">Modélisation de la base de données PostgreSQL.</div>
+    </div>
+    <div class="screenshot-item">
+      <img src="assets/img/page15-trpe623.jpg" alt="Conception UI">
+      <div class="screenshot-caption">Conception de l'interface utilisateur mobile.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Étape 6 : Développement du backend et du modèle IA</h2>
+    <p>API REST Spring Boot pour gestion des données, API Flask pour le modèle IA, conteneurisation avec Docker. Développement du modèle : sources de données, analyse, augmentation, entraînement YOLOv8.</p>
+    <p>Technologies : Spring Boot, Flask, Docker, YOLOv8.</p>
+    <div class="screenshot-item">
+      <img src="assets/img/page19-trpe623.jpg" alt="Développement du modèle IA">
+      <div class="screenshot-caption">Développement du modèle IA avec YOLOv8.</div>
+    </div>
+    <div class="screenshot-item">
+      <img src="assets/img/page32-trpe623.jpg" alt="Développement backend">
+      <div class="screenshot-caption">Développement du backend avec API Spring Boot.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Étape 7 : Intégration et tests</h2>
+    <p>Intégration des composants (mobile + back-end + IA), tests unitaires, fonctionnels et d'intégration pour assurer la fiabilité et la précision du système.</p>
+    <p>Technologies : JUnit, Postman pour tests API, émulateurs mobile.</p>
+    <div class="screenshot-item">
+      <img src="assets/img/page37-trpe623.jpg" alt="Intégration et tests">
+      <div class="screenshot-caption">Intégration et tests du système complet.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Étape 8 : Déploiement et supervision</h2>
+    <p>Déploiement de l'application sur serveur, supervision avec outils de monitoring pour performances et erreurs.</p>
+    <p>Technologies : Docker Compose, Heroku/AWS pour hébergement, Prometheus pour supervision.</p>
+    <div class="screenshot-item">
+      <img src="assets/img/page37-trpe623.jpg" alt="Déploiement">
+      <div class="screenshot-caption">Déploiement et supervision de la solution.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Limites et perspectives d'amélioration</h2>
+    <p>Limites : Précision limitée sur certaines empreintes, dépendance à la qualité des photos. Perspectives : Amélioration du modèle avec plus de données, ajout de fonctionnalités comme la réalité augmentée.</p>
+  </div>
+
+  <div class="section">
+    <h2>Méthodologie de travail et outils de gestion de projet</h2>
+    <p>Méthodologie Agile avec sprints, utilisation de Trello pour tâches, GitHub pour versionning.</p>
+    <div class="screenshot-item">
+      <img src="assets/img/page38-trpe623.jpg" alt="Méthodologie de travail">
+      <div class="screenshot-caption">Méthodologie de travail et outils de gestion de projet.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Conclusion</h2>
+    <p>Ce projet a permis de développer et déployer une solution I.A complète, renforçant les compétences en IA, développement mobile/back-end et déploiement. Il s'agit d'un grand projet en équipe, couvrant toutes les étapes d'un cycle de vie IA.</p>
+  </div>
+
+  <div class="section">
+    <h2>Télécharger les rapports</h2>
+    <a href="MSPR-TR62-yanis boukherchoufa-ES-SAIYDY Abir-OUKOUKES Nour El houda.pdf" download class="download-btn"><i class="fas fa-file-pdf"></i> Rapport Développement Modèle (E62)</a>
+    <a href="MSPR-TRPE623_OUKOUKES_Nour-el-houda_ES-SAIYDY_Abir_BOUKHERCHOUFA_Yanis.pdf" download class="download-btn"><i class="fas fa-file-pdf"></i> Rapport Mise en Production (E61)</a>
   </div>
 
 </body>
